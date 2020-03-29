@@ -17,7 +17,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/xDarkicex/cchha_new_server/app/controllers"
+	"github.com/bitdevio/tools"
+	"github.com/xDarkicex/Hospice/app/controllers"
 )
 
 func NewRouter() http.Handler {
@@ -107,7 +108,7 @@ func NewRouter() http.Handler {
 		//   e, err := encryption.NewDecryption()
 		//   // err handle
 		//   e.INI().Decrypt("file path")
-
+		tools.List()
 		auth := smtp.PlainAuth("", "admin@cchha.com", "Vh2@cchha#G0!", "smtp.gmail.com")
 		SMTP := "smtp.gmail.com:587"
 		if err := email.Send(SMTP, auth, m); err != nil {
