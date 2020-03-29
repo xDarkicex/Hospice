@@ -103,6 +103,11 @@ func NewRouter() http.Handler {
 		m.From = mail.Address{Name: "Jobs", Address: "admin@cchha.com"}
 		m.To = []string{"jobs@cchha.com"}
 		// HomeHealth2017
+		// TODO: encryption example:
+		//   e, err := encryption.NewDecryption()
+		//   // err handle
+		//   e.INI().Decrypt("file path")
+
 		auth := smtp.PlainAuth("", "admin@cchha.com", "Vh2@cchha#G0!", "smtp.gmail.com")
 		SMTP := "smtp.gmail.com:587"
 		if err := email.Send(SMTP, auth, m); err != nil {
