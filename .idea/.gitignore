@@ -1,0 +1,26 @@
+# Default ignored files
+/vcs.xml
+/modules.xml
+/cchha_new_server.iml
+/highlightedFiles.xml
+/misc.xml
+/inspectionProfiles/
+# No images
+*.jpg
+*.jpeg
+*.mp4
+*.gif
+*.png
+*.psd
+*.svg
+*.pdf
+
+
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
