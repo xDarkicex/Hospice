@@ -4,6 +4,9 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
+	"github.com/go-chi/chi/middleware"
+	"github.com/go-chi/chi/v4"
+	"github.com/scorredoira/email"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -13,9 +16,6 @@ import (
 	"regexp"
 	"strings"
 	"time"
-	"github.com/go-chi/chi/middleware"
-	"github.com/go-chi/chi/v4"
-	"github.com/scorredoira/email"
 
 	"github.com/xDarkicex/cchha_new_server/app/controllers"
 )
@@ -82,13 +82,13 @@ func NewRouter() http.Handler {
 		if !google_struct.Success {
 			cookie = GenerateCookie("Failed reChaptcha", google_struct.Success)
 			http.SetCookie(res, cookie)
-			http.Redirect(res, req, "/careers.html", 302)
+			http.Redirect(res, req, "/careers.html", http.StatusFound)
 			return
 		}
 		if !validate_email(e) {
 			cookie = GenerateCookie("Must enter valid email", false)
 			http.SetCookie(res, cookie)
-			http.Redirect(res, req, "/careers.html", 302)
+			http.Redirect(res, req, "/careers.html", http.StatusFound)
 			return
 		}
 
@@ -112,7 +112,7 @@ func NewRouter() http.Handler {
 		cookie = GenerateCookie("Email Sent Successful", true)
 		http.SetCookie(res, cookie)
 		fmt.Println(cookie)
-		http.Redirect(res, req, "/", 302)
+		http.Redirect(res, req, "/", http.StatusFound)
 	})
 
 	router.Post("/contact", func(res http.ResponseWriter, req *http.Request) {
@@ -128,13 +128,13 @@ func NewRouter() http.Handler {
 		if !google_struct.Success {
 			cookie = GenerateCookie("Failed reChaptcha", google_struct.Success)
 			http.SetCookie(res, cookie)
-			http.Redirect(res, req, "/contact.html", 302)
+			http.Redirect(res, req, "/contact.html", http.StatusFound)
 			return
 		}
 		if !validate_email(e) {
 			cookie = GenerateCookie("Must enter valid email", false)
 			http.SetCookie(res, cookie)
-			http.Redirect(res, req, "/contact.html", 302)
+			http.Redirect(res, req, "/contact.html", http.StatusFound)
 			return
 		}
 
@@ -158,7 +158,7 @@ func NewRouter() http.Handler {
 		cookie = GenerateCookie("Email Sent Successful", true)
 		http.SetCookie(res, cookie)
 		fmt.Println(cookie)
-		http.Redirect(res, req, "/", 302)
+		http.Redirect(res, req, "/", http.StatusFound)
 	})
 
 	//static assets
