@@ -4,6 +4,9 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
+	"github.com/go-chi/chi/middleware"
+	"github.com/go-chi/chi/v4"
+	"github.com/scorredoira/email"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -13,6 +16,7 @@ import (
 	"regexp"
 	"strings"
 	"time"
+
 
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/chi/v4"
