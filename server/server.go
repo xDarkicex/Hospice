@@ -4,9 +4,6 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"github.com/go-chi/chi/middleware"
-	"github.com/go-chi/chi/v4"
-	"github.com/scorredoira/email"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -17,9 +14,16 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bitdevio/tools"
-	"github.com/xDarkicex/Hospice/app/controllers"
+	"github.com/go-chi/chi/middleware"
+	"github.com/go-chi/chi/v4"
+	"github.com/scorredoira/email"
+
+	"github.com/xDarkicex/cchha_new_server/app/controllers"
 )
+
+func init() {
+
+}
 
 func NewRouter() http.Handler {
 	router := chi.NewRouter()
@@ -31,24 +35,24 @@ func NewRouter() http.Handler {
 	router.Get("/", application.Index)
 
 	// home health
-	homehealth := controllers.HomeHealth{}
-	router.Get("/home-health", homehealth.Index)
-	router.Get("/home-health/careers", homehealth.Careers)
-	router.Get("/home-health/careers.html", homehealth.Careers)
-	router.Get("/home-health/services", homehealth.Services)
-	router.Get("/home-health/services.html", homehealth.Services)
-	router.Get("/home-health/eligibility", homehealth.Eligibility)
-	router.Get("/home-health/eligibility.html", homehealth.Eligibility)
-	router.Get("/home-health/resources", homehealth.Resources)
-	router.Get("/home-health/resources.html", homehealth.Resources)
-	router.Get("/home-health/community", homehealth.Community)
-	router.Get("/home-health/community.html", homehealth.Community)
-	router.Get("/home-health/about", homehealth.About)
-	router.Get("/home-health/about.html", homehealth.About)
-	router.Get("/home-health/locations", homehealth.Locations)
-	router.Get("/home-health/locations.html", homehealth.Locations)
-	router.Get("/home-health/contact", homehealth.Contact)
-	router.Get("/home-health/contact.html", homehealth.Contact)
+	homeHealth := controllers.HomeHealth{}
+	router.Get("/home-health", homeHealth.Index)
+	router.Get("/home-health/careers", homeHealth.Careers)
+	router.Get("/home-health/careers.html", homeHealth.Careers)
+	router.Get("/home-health/services", homeHealth.Services)
+	router.Get("/home-health/services.html", homeHealth.Services)
+	router.Get("/home-health/eligibility", homeHealth.Eligibility)
+	router.Get("/home-health/eligibility.html", homeHealth.Eligibility)
+	router.Get("/home-health/resources", homeHealth.Resources)
+	router.Get("/home-health/resources.html", homeHealth.Resources)
+	router.Get("/home-health/community", homeHealth.Community)
+	router.Get("/home-health/community.html", homeHealth.Community)
+	router.Get("/home-health/about", homeHealth.About)
+	router.Get("/home-health/about.html", homeHealth.About)
+	router.Get("/home-health/locations", homeHealth.Locations)
+	router.Get("/home-health/locations.html", homeHealth.Locations)
+	router.Get("/home-health/contact", homeHealth.Contact)
+	router.Get("/home-health/contact.html", homeHealth.Contact)
 
 	// hospice
 	hospice := controllers.Hospice{}
@@ -108,7 +112,7 @@ func NewRouter() http.Handler {
 		//   e, err := encryption.NewDecryption()
 		//   // err handle
 		//   e.INI().Decrypt("file path")
-		tools.List()
+
 		auth := smtp.PlainAuth("", "admin@cchha.com", "Vh2@cchha#G0!", "smtp.gmail.com")
 		SMTP := "smtp.gmail.com:587"
 		if err := email.Send(SMTP, auth, m); err != nil {

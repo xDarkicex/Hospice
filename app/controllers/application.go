@@ -12,5 +12,5 @@ type Application Controllers
 //  Update Render function
 //  Implement templating
 func (this Application) Index(w http.ResponseWriter, r *http.Request) {
-	helpers.Render(w, r)
+	helpers.Render(w, r, "splash", map[string]interface{}{"Index": "Home Page"})
 }
