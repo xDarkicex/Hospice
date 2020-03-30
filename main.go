@@ -1,22 +1,23 @@
 package main
 
 import (
-	"log"
-	"net/http"
+    "log"
+    "net/http"
 
+    "github.com/go-chi/chi/v4"
 
-	"github.com/xDarkicex/cchha_new_server/server"
-
+    "github.com/xDarkicex/cchha_new_server/helpers"
+    "github.com/xDarkicex/cchha_new_server/server"
 )
 
-
 func main() {
-	// var s = server.NewServer("127.0.0.1", ":3000")
-	var routes = server.NewRouter()
-	ser := &http.Server{
-		Addr:    ":3000",
-		Handler: routes,
-	}
-	log.Fatalln(ser.ListenAndServe())
+    h, mux := helpers.TTLERRORX()
+    // var routes = server.NewRouter()
+    ser := &http.Server{
+        Addr:    ":3000",
+        Handler: mux,
+
+    }
+    log.Fatalln(ser.ListenAndServe())
 
 }

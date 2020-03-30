@@ -2,9 +2,7 @@ package helpers
 
 import (
 	"fmt"
-	"io/ioutil"
 	"net/http"
-	"regexp"
 	"strings"
 )
 
@@ -21,10 +19,6 @@ func RedirectWithoutHTML(w http.ResponseWriter, r *http.Request) error {
 }
 
 func withoutHTML(w http.ResponseWriter, r *http.Request) string {
-	// if r.URL.Path == "/" {
-	// 	return nil
-	// }
-	// fmt.Println(r.URL.Path)
 	if strings.Contains(r.URL.EscapedPath(), ".") {
 		fmt.Println(r.URL.Path)
 		path := strings.Split(r.URL.EscapedPath(), ".")
@@ -33,41 +27,20 @@ func withoutHTML(w http.ResponseWriter, r *http.Request) string {
 	return r.URL.EscapedPath()
 }
 
-func Render(w http.ResponseWriter, r *http.Request) {
+func Render(w http.ResponseWriter, r *http.Request, view string, object map[string]interface{}) {
+	handle := NewHandleWithWriter(w)
 	path := withoutHTML(w, r)
-	device := r.UserAgent()
-	expression := regexp.MustCompile("(Mobi(le|/xyz)|Tablet)")
-	if !expression.MatchString(device) {
-		w.Header().Set("Connection", "keep-alive")
-	}
 	if path == "/" {
-		file, err := ioutil.ReadFile("app/views/splash.html")
-		if err != nil {
-			fmt.Println(err)
-		}
-		w.Write([]byte(file))
+		handle.Error(render(w,r, "splash", object))
 		return
 	}
 	if path == "/home-health" {
-		file, err := ioutil.ReadFile("app/views" + path + "/index.html")
-		if err != nil {
-			fmt.Println(err)
-		}
-		w.Write([]byte(file))
+		handle.Error(render(w, r, "home-health/index", object))
 		return
 	}
 	if path == "/hospice" {
-		file, err := ioutil.ReadFile("app/views/" + path + "/index.html")
-		if err != nil {
-			fmt.Println(err)
-		}
-		w.Write([]byte(file))
+		handle.Error(render(w,r,"hospice/index", object))
 		return
 	}
-	file, err := ioutil.ReadFile("app/views/" + path + ".html")
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	w.Write([]byte(file))
+	handle.Error(render(w,r, path, object))
 }
