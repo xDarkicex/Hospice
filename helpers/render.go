@@ -50,7 +50,7 @@ func render(w http.ResponseWriter, r *http.Request, view string, object map[stri
 
     times["render-page"] = time.Now()
 
-    gotpl, err := template.New(view).Funcs(funcMap).ParseFiles("./app/views/templates/navbar.gohtml", "./app/views/templates/footer.gohtml", "./app/views/"+view+".gohtml", "./app/views/templates/layout.gohtml")
+    gotpl, err := template.New(view).Funcs(funcMap).ParseFiles("./app/views/hospice/layout/navbar.gohtml", "./app/views/hospice/layout/footer.gohtml", "./app/views/"+view+".gohtml", "./app/views/hospice/layout/layout.gohtml")
     if err != nil {
         return err
     }

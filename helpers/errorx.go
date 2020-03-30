@@ -2,16 +2,18 @@ package helpers
 
 import (
     "context"
+
     "fmt"
     "net/http"
-    "runtime"
 
-    "github.com/go-chi/chi/middleware"
-    "github.com/go-chi/chi/v4"
+
+
+
     _ "github.com/labstack/gommon"
     "github.com/labstack/gommon/log"
-    "github.com/valyala/fasttemplate"
+   _ "github.com/valyala/fasttemplate"
     "golang.org/x/xerrors"
+
 )
 
 
@@ -60,31 +62,30 @@ var TestErr = xerrors.New("test error handler")
 func init() {
 }
 
-func TTLERRORX() (handle *HandleLeveled, m *http.Handler){
-    mux := chi.NewRouter()
-    router := chi.Mux{}
-    ctx := context.Background()
-    router.Use(middleware.SetHeader("header",))
-    mux.Get("/", func(writer http.ResponseWriter, request *http.Request) {
-        handle := NewHandleLeveledWithWriter(writer, DEBUG)
-        handle.WithLOGGING(&log.Logger{})
-        handle.L.SetPrefix(fasttemplate.ExecuteString(stdTemp,"{{", "}}", map[string]interface{}{
-            "host": request.Host,
-            "line": xerrors.Caller(1),
-            "why":  TestErr.Error(),
-        }))
-        pc, fn, line, _ := runtime.Caller(1)
-        pre = fasttemplate.ExecuteString(pre, "{{", "}}", map[string]interface{}{
-            "lvl":  handle.level,
-        })
-        print(fmt.Sprintf("\n%s[%s:%d] %v", runtime.FuncForPC(pc).Name(), fn, line, TestErr))
-        handle.Error(TestErr)
-    })
-    h := NewHandleLeveled()
-    h.SetLevel(PANIC)
-    // h.Error(http.ListenAndServe("localhost:3001", mux))
-    return h, _
-}
+// func TTLERRORX() (handle *HandleLeveled, m *http.Handler) {
+//     mux := chi.NewRouter()
+//     router := chi.Mux{}
+//     defer context.Background()
+//     mux.Get("/", func(writer http.ResponseWriter, request *http.Request) {
+//         handle := NewHandleLeveledWithWriter(writer, DEBUG)
+//         handle.WithLOGGING(&log.Logger{})
+//         handle.L.SetPrefix(fasttemplate.ExecuteString(stdTemp,"{{", "}}", map[string]interface{}{
+//             "host": request.Host,
+//             "line": xerrors.Caller(1),
+//             "why":  TestErr.Error(),
+//         }))
+//         pc, fn, line, _ := runtime.Caller(1)
+//         pre = fasttemplate.ExecuteString(pre, "{{", "}}", map[string]interface{}{
+//             "lvl":  handle.level,
+//         })
+//         print(fmt.Sprintf("\n%s[%s:%d] %v", runtime.FuncForPC(pc).Name(), fn, line, TestErr))
+//         handle.Error(TestErr)
+//     })
+//
+//     h := NewHandleLeveled()
+//     h.SetLevel(PANIC)
+// }
+// }
 
 func (h *Handle) WithLOGGING(l *log.Logger) *Handle {
     h.L = l
