@@ -1,26 +1,4 @@
-{{define "title"}} {{.Title}} {{end}}
-    <div class="uk-offcanvas-content" uk-height-viewport="expand:true">
-      <div id="offcanvas" uk-offcanvas="mode: push">
-        <div class="uk-offcanvas-bar uk-flex uk-flex-column uk-background-primary">
-          <button class="uk-offcanvas-close" type="button" uk-close></button>
-          <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical"></ul>
-        </div>
-      </div>
-      <div id="header" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-
-      </div>
-      <style>
-        p {
-          line-height: 1.5rem;
-        }
-      </style>
-      <div>
-        <div class="uk-text-center">
-          <div class="uk-padding">
-            <img src="/static/assets/compassionate-hospice.svg" style="max-height: 200px; margin-bottom: 25px;" alt="Compassionate Care Home Health Agency Logo">
-          </div>
-        </div>
-      </div>
+    {{define "content"}}
       <div>
         <div class="uk-section uk-preserve-color uk-align-middle" style="background-color:#f8f8f8;">
           <div class="uk-grid-match uk-child-width-1-1@s uk-padding" uk-scrollspy="target: > div; cls: uk-animation-scale-up; " uk-grid>
@@ -110,5 +88,5 @@
             </div>
           </div>
         </div>
-
+  {{end}}
 

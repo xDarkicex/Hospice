@@ -1,15 +1,24 @@
 package helpers
 
 import (
+    "fmt"
     "net/http"
     "regexp"
     "strings"
     "time"
     "github.com/alecthomas/template"
+
+    "github.com/xDarkicex/Hospice/terminal"
+)
+
+var (
+    Splash = 0
+    HomeHealth = 1
+    Hospice = 2
 )
 
 // Execute function renders page with our data
-func render(w http.ResponseWriter, r *http.Request, view string, object map[string]interface{}) error {
+func render(w http.ResponseWriter, r *http.Request, site int, view string, object map[string]interface{}) error {
     handle := NewHandleWithWriter(w)
     device := r.UserAgent()
     expression := regexp.MustCompile("(Mobi(le|/xyz)|Tablet)")
@@ -49,14 +58,40 @@ func render(w http.ResponseWriter, r *http.Request, view string, object map[stri
     }
 
     times["render-page"] = time.Now()
-
-    gotpl, err := template.New(view).Funcs(funcMap).ParseFiles("./app/views/hospice/layout/navbar.gohtml", "./app/views/hospice/layout/footer.gohtml", "./app/views/"+view+".gohtml", "./app/views/hospice/layout/layout.gohtml")
-    if err != nil {
-        return err
+    fmt.Println(terminal.Colors[35](view))
+    if site == Hospice {
+        gotpl, err := template.New(view).Funcs(funcMap).ParseFiles("./app/views/hospice/layout/navbar.gohtml", "./app/views/hospice/layout/footer.gohtml", "./app/views/hospice/view/"+view+".gohtml", "./app/views/hospice/layout/layout.gohtml")
+        if err != nil {
+            handle.Error(err)
+        }
+        err = gotpl.ExecuteTemplate(w, "base", object)
+        handle.Error(err)
+        times["render-page"] = time.Since(times["render-page"].(time.Time))
+        times["total"] = time.Since(times["total"].(time.Time))
+        return nil
     }
-    err = gotpl.ExecuteTemplate(w, "base", object)
-    handle.Error(err)
-    times["render-page"] = time.Since(times["render-page"].(time.Time))
-    times["total"] = time.Since(times["total"].(time.Time))
-    return nil
+    if site == Splash {
+        gotpl, err := template.New(view).Funcs(funcMap).ParseFiles( "./app/views/splash.gohtml")
+        if err != nil {
+            handle.Error(err)
+        }
+        err = gotpl.ExecuteTemplate(w, "base", object)
+        handle.Error(err)
+        times["render-page"] = time.Since(times["render-page"].(time.Time))
+        times["total"] = time.Since(times["total"].(time.Time))
+        return nil
+    }
+    if site == HomeHealth {
+        gotpl, err := template.New("base").Funcs(funcMap).ParseFiles( "./app/views/home-health/"+view+".html")
+        if err != nil {
+            handle.Error(err)
+        }
+        err = gotpl.ExecuteTemplate(w, "base", object)
+        handle.Error(err)
+        times["render-page"] = time.Since(times["render-page"].(time.Time))
+        times["total"] = time.Since(times["total"].(time.Time))
+        return nil
+    }
+return nil
 }
+

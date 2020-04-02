@@ -1,96 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 
-  <head>
-      <meta content = "”no-cache”" http-equiv = "“Pragma”">
-    <meta content = "”-1″" http-equiv = "“Expires”">
-    <meta content = "”NO-CACHE”" http-equiv = "“CACHE-CONTROL”">
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" viewport-fit="cover">
-    <meta name="description" content="We have been serving the Central Valley community for over a decade, and our commitment to providing the highest quality care shows in every patient we serve. Let us show you what compassionate care truly means.">
-    <link rel="icon" type="image/png" href="../static/assets/favicon.png">
-    <link rel="stylesheet" href="/static/css/main.css">
-    <title>Compassionate Care Hospice</title>
-    <script src="/static/js/main.js"></script>
-    <script>
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player',{
-          events: {
-            onReady: function(event) {
-              //- var embedCode = event.target.getVideoEmbedCode()
-              //- event.target.unMute()
-              event.target.setVolume(100)
-            }
-          }
-        })
-      }
-    </script><!-- Facebook Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '2048222891932812');
-      fbq('track', 'PageView');
-
-    </script>
-    <noscript><img height="1" width="1" style="display:none;" src="https://www.facebook.com/tr?id=2048222891932812&amp;ev=PageView&amp;noscript=1"></noscript><!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133675222-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-133675222-1');
-    </script><!-- End Facebook Pixel Code -->
-  </head>
   <body>
-    <div class="uk-offcanvas-content" uk-height-viewport="expand:true">
-      <div id="offcanvas" uk-offcanvas="mode: push">
-        <div class="uk-offcanvas-bar uk-flex uk-flex-column uk-background-primary">
-          <button class="uk-offcanvas-close" type="button" uk-close></button>
-          <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical"></ul>
-        </div>
-      </div>
-      <div id="header" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-        <nav class="uk-text-bold uk-navbar-container uk-height-match" uk-navbar>
-          <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-              <li class="uk-hidden@m"><a href="#offcanvas" uk-toggle uk-icon="icon: menu"></a></li>
-            </ul>
-          </div>
-          <div class="uk-navbar-center">
-            <div class="uk-navbar-center-left uk-visible@m">
-              <ul class="uk-navbar-nav">
-                <li class="uk-parent"><a href="/hospice/services.html">Services</a></li>
-                <li class="uk-parent"><a href="/hospice/careers.html">Careers</a></li>
-                <li class="uk-parent"><a href="/hospice/about.html">About</a></li>
-              </ul>
-            </div><a class="uk-navbar-item uk-logo" href="/"><img src="/static/assets/favicon.png" alt="Compassionate Care Home Health Agency Logo"></a>
-            <div class="uk-navbar-center-right uk-visible@m">
-              <ul class="uk-navbar-nav">
-                <li class="uk-parent uk-nav-divider"></li>
-                <li class="uk-parent"><a href="/hospice/locations.html">Locations</a></li>
-                <li class="uk-parent"><a href="/hospice/contact.html">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-
+  {{define "content"}}
         <div uk-grid>
           <div class="uk-width-1-1 uk-text-center">
-           <div class="uk-container uk-padding">
-            <img src="/static/assets/compassionate-hospice.svg" style="max-height: 200px; margin-bottom: 25px;" alt="Compassionate Care Home Health Agency Logo">
-           </div>
+
             <div class="uk-section uk-section-primary uk-preserve-color">
               <div class="uk-container">
                 <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
@@ -99,34 +12,33 @@
                       <div class="uk-panel">
                         <h2 style="text-align: left;">{{print "Compassionate Care Hospice"}}</h2>
                       </div>
-                      <p class="uk-text-justify">
-                        Compassionate Care Hospice is here for you during your, or your loved one's, most delicate time. The only requisite to start hospice care
-                        is that the patient be diagnosed with a terminal condition. Hospice staffing services, supplies, medical equipment and medications are a fully covered benefit under
-                        Medicare Part A and the Medi-Cal program in California. Medications provided must be directly related to the hospice primary diagnosis.
+                       <p class="uk-text-justify">
+                                Compassionate Care Hospice is here for you during your, or your loved one's, most delicate time. The only requisite to start hospice care
+                                is that the patient be diagnosed with a terminal condition. Hospice staffing services, supplies, medical equipment and medications are a fully covered benefit under
+                                Medicare Part A and the Medi-Cal program in California. Medications provided must be directly related to the hospice primary diagnosis.
                       </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="uk-width-1-1">
-              <div class="uk-container">
-                <div class="uk-padding">
-{{/*                  <p class="uk-text-large uk-h2 uk-lead uk-text-center">Coming Soon</p>*/}}
-                </div>
-                <div class="uk-section-secondary" style="height: 500px;">
-                  <p class="uk-align-middle uk-align-center uk-text-center uk-h2" style="line-height:500px; color: white;">
-                    <iframe id="ytplayer" type="text/html" width="1160" height="720"
-                            src="https://www.youtube.com/embed/yYP6-BsPGjo?autoplay=1"
-                            frameborder="0" allowfullscreen>
-                  </p>
+              <div class="uk-width-1-1">
+                <div class="uk-container">
+                  <div class="uk-padding">
+                  </div>
+                  <div class="uk-section-secondary uk-cover-container" style="height: 600px;">
+                    <iframe id="ytplayer" type="text/html" width="700" height="420"
+                       src="https://www.youtube-nocookie.com/embed/yYP6-BsPGjo?autoplay=1;controls=0&amp;showinfo=0&amp;rel=0&amp;loop=1&amp;modestbranding=1&amp;wmode=transparent"  frameborder="0" allowfullscreen uk-cover>
+                          frameborder="0" allowfullscreen uk-cover>
+                    </iframe>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      <footer class="uk-container uk-padding">
-      </footer>
-    </div>
+       </div>
+    <div class="uk-padding"></div>
+  {{end}}
   </body>
 </html>

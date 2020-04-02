@@ -10,7 +10,7 @@
     <meta name="description" content="We have been serving the Central Valley community for over a decade, and our commitment to providing the highest quality care shows in every patient we serve. Let us show you what compassionate care truly means.">
     <link rel="icon" ype="image/png" href="../static/assets/favicon.png">
     <link rel="stylesheet" href="/static/css/main.css">
-    <title >{{block "title" .}} {{end}}</title >
+    <title > {{ .Title }} </title >
     <head>
         <script src="/static/js/main.js"></script>
         <script>
@@ -53,7 +53,28 @@
     </script><!-- End Facebook Pixel Code -->
     </head>
     <body>
-        {{template "navbar"}}
+    <div class="uk-offcanvas-content" uk-height-viewport="expand:true">
+        <div id="offcanvas" uk-offcanvas="mode: push">
+            <div class="uk-offcanvas-bar uk-flex uk-flex-column uk-background-primary">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical"></ul>
+            </div>
+        </div>
+        <div id="header" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+            {{template "navbar"}}
+        </div>
+        <style>
+            p {
+                line-height: 1.5rem;
+            }
+        </style>
+        <div>
+            <div class="uk-text-center">
+                <div class="uk-padding">
+                    <img src="/static/assets/compassionate-hospice.svg" style="max-height: 200px; margin-bottom: 25px;" alt="Compassionate Care Home Health Agency Logo">
+                </div>
+            </div>
+        </div>
 
         {{template "content" . }}
 

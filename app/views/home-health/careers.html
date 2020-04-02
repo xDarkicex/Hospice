@@ -1,3 +1,4 @@
+{{define "base"}}
 <!DOCTYPE html>
 <html>
   <head><meta http-equiv=“Pragma” content=”no-cache”>
@@ -38,7 +39,7 @@
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '2048222891932812');
       fbq('track', 'PageView');
-      
+
     </script>
     <noscript><img height="1" width="1" style="display:none;" src="https://www.facebook.com/tr?id=2048222891932812&amp;ev=PageView&amp;noscript=1"></noscript><!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133675222-1"></script>
@@ -46,7 +47,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      
+
       gtag('config', 'UA-133675222-1');
     </script><!-- End Facebook Pixel Code -->
   </head>
@@ -295,3 +296,4 @@
     </div>
   </body>
 </html>
+{{end}}

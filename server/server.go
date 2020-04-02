@@ -1,10 +1,12 @@
 package server
 
 import (
-
+    "context"
+    "errors"
+    "fmt"
     "io"
 
-
+    "github.com/google/uuid"
     log2 "log"
 	"net/http"
     "os"
@@ -13,19 +15,105 @@ import (
 	log "github.com/labstack/gommon/log"
 	"github.com/go-chi/chi/v4"
 	"github.com/go-chi/chi/v4/middleware"
-
-    "github.com/valyala/fasttemplate"
-
-	"github.com/xDarkicex/cchha_new_server/app/controllers"
-	"github.com/xDarkicex/cchha_new_server/helpers"
-    "github.com/xDarkicex/cchha_new_server/terminal"
+    "github.com/xDarkicex/Hospice/app/controllers"
+    "github.com/xDarkicex/Hospice/terminal"
+  "github.com/xDarkicex/Hospice/helpers"
+  "github.com/valyala/fasttemplate"
 )
 
-var handle = new(helpers.HandleLeveled)
+var templates = make(map[string]string)
+
+
+func init() {
+    Init(os.Stdout, os.Stdout, os.Stdout, os.Stdout,  os.Stderr)
+    Default.Println("...")
+    Info.Println(".....")
+    Warn.Println("Loading....")
+
+    Error.Println(Color.PinkBold("Done loading colors"))
+
+    Mux = NewRouter()
+    Error.Println(Color.Blue("Routes Registration complete"))
+    templates["visit_data"] = "time={{time}}, IP={{IP}}," +
+                              "requestid={{requestID}}, "+
+                              "referer={{referer}}, "+
+                              "method={{Method}}, "+
+                              "host={{HOST}}, "+
+                              "uri={{URI}}, \n" +
+                              "key={{key}}, "+
+                              "status={{status}}, "+
+                              "error={{err}},\n" +
+                              "headers={{headers}}\n";
+}
+
+func getTemplate(pre string) string {
+  return templates[pre]
+}
+
+func SiteByHeader(next http.Handler) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        ctxRaw := r.Context()
+        ctx := context.WithValue(ctxRaw, "x-author", "https://bitdev.io")
+        ctx = context.WithValue(ctx, "siteby", "bitdev")
+        ctx = context.WithValue(ctx, "author", "Gentry Rolofson")
+        ctx = context.WithValue(ctx, "copyright", "© 2020 bitdev")
+
+        response := r.WithContext(ctx)
+        w.Header().Add("x-author", "https://bitdev.io")
+        w.Header().Add( "siteby", "bitdev")
+        w.Header().Add("developer", "Gentry Rolofson")
+        w.Header().Add("server", "BlackStar Server")
+        w.Header().Add( "copyright", "© 2020 BlackStar server by bitdev")
+        f, err := os.OpenFile("middleware.log",
+            os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+        if err != nil {
+            log2.Println(err)
+        }
+        defer f.Close()
+        ctx = r.Context()
+        // ContextKey is used for context.Context value. The value requires a key that is not primitive type.
+        type ContextKey string
+        id := uuid.New()
+        var ContextKeyRequestID ContextKey = ContextKey(fmt.Sprintf("requestID-%s", id.String()))
+        ctx = context.WithValue(ctx, ContextKeyRequestID, id)
+        infoTemp := fasttemplate.New(getTemplate("visit_data"), "{{", "}}")
+
+        logger := log2.New(f, "", log2.LstdFlags)
+        logger.Println("text to append")
+        logger.Println("more text to append")
+
+        log2.Printf("incomming request %s %s %s %s", r.Method, r.RequestURI, r.RemoteAddr, id.String())
+        logger.Printf("%s\n", infoTemp.ExecuteString(map[string]interface{}{
+            terminal.Colors[25]("time"): time.Now().Format(time.Stamp),
+              terminal.Colors[50]("referer"): r.Referer(),
+              terminal.Colors[100]("HOST"): r.Host,
+              terminal.Colors[200]("Method"): r.Method,
+              terminal.Colors[210]("URI"): r.RequestURI,
+              terminal.Colors[189]("IP"): r.RemoteAddr,
+              terminal.Colors[150]("requestID"): id,
+              terminal.Colors[120]("headers"): r.Header,
+              terminal.Colors[108]("Key"): ContextKeyRequestID,
+            }))
+      next.ServeHTTP(w, response)
+      log2.Printf("Finished handling http req. %s", id.String())
+    })
+  }
+
+
+var handle helpers.HandleLeveled
 func NewRouter() *chi.Mux {
     router := chi.NewRouter()
     router.Use(middleware.Timeout(60 * time.Second))
+    router.Use(middleware.RequestID)
+    router.Use(middleware.RealIP)
+    router.Use(middleware.Logger)
+    router.Use(middleware.Recoverer)
+    router.Use(middleware.Logger)
+    cache := helpers.NewCache()
+    cached := *helpers.NewHandleLeveledWithCache(cache, &helpers.DEBUG)
 
+
+    router.Use(SiteByHeader)
     // Routes
     // splash
     application := controllers.Application{}
@@ -58,12 +146,12 @@ func NewRouter() *chi.Mux {
     router.Get("/hospice/careers.html", hospice.Careers)
     router.Get("/hospice/services", hospice.Services)
     router.Get("/hospice/services.html", hospice.Services)
-    router.Get("/hospice/eligibility", hospice.Eligibility)
-    router.Get("/hospice/eligibility.html", hospice.Eligibility)
-    router.Get("/hospice/resources", hospice.Resources)
-    router.Get("/hospice/resources.html", hospice.Resources)
-    router.Get("/hospice/community", hospice.Community)
-    router.Get("/hospice/community.html", hospice.Community)
+    // router.Get("/hospice/eligibility", hospice.Eligibility)
+    // router.Get("/hospice/eligibility.html", hospice.Eligibility)
+    // router.Get("/hospice/resources", hospice.Resources)
+    // router.Get("/hospice/resources.html", hospice.Resources)
+    // router.Get("/hospice/community", hospice.Community)
+    // router.Get("/hospice/community.html", hospice.Community)
     router.Get("/hospice/about", hospice.About)
     router.Get("/hospice/about.html", hospice.About)
     router.Get("/hospice/locations", hospice.Locations)
@@ -77,7 +165,8 @@ func NewRouter() *chi.Mux {
     router.Get("/static/{filepath}*", func(w http.ResponseWriter, r *http.Request) {
         r.URL.Path = chi.URLParam(r, "filepath")
         if strings.ContainsAny(r.URL.Path, "{}*") {
-            log.Error("FileServer does not permit URL parameters.")
+            cached.CacheError("Static_FS", errors.New("fileServer does not permit URL parameters"))
+            log.Error("fileServer does not permit URL parameters")
         }
         http.FileServer(http.Dir("public")).ServeHTTP(w, r)
     })
@@ -160,18 +249,6 @@ func warnLogger(wh io.Writer) *log2.Logger {
         "level": Color.Orange("Warning"),
     })
     return log2.New(wh, prefixed, log2.Ldate|log2.Ltime|log2.Lshortfile)
-}
-func init() {
-    Init(os.Stdout, os.Stdout, os.Stdout, os.Stdout,  os.Stderr)
-    Default.Println("...")
-    Info.Println(".....")
-    Warn.Println("Loading....")
-
-    Error.Println(Color.PinkBold("Done loading colors"))
-
-    Mux = NewRouter()
-    Error.Println(Color.Blue("Routes Registration complete"))
-
 }
 
 func NewServer(config interface{}) *http.Server {

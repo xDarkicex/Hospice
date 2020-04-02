@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+
+	"github.com/labstack/gommon/log"
 )
 
 func RedirectWithoutHTML(w http.ResponseWriter, r *http.Request) error {
@@ -27,20 +29,21 @@ func withoutHTML(w http.ResponseWriter, r *http.Request) string {
 	return r.URL.EscapedPath()
 }
 
-func Render(w http.ResponseWriter, r *http.Request, view string, object map[string]interface{}) {
+func Render(w http.ResponseWriter, r *http.Request, site int, view string, object map[string]interface{}) {
 	handle := NewHandleWithWriter(w)
 	path := withoutHTML(w, r)
+	log.Warn(path)
 	if path == "/" {
-		handle.Error(render(w,r, "splash", object))
+		handle.Error(render(w,r, Splash,"splash", object))
 		return
 	}
 	if path == "/home-health" {
-		handle.Error(render(w, r, "home-health/index", object))
+		handle.Error(render(w, r, HomeHealth,"index", object))
 		return
 	}
 	if path == "/hospice" {
-		handle.Error(render(w,r,"hospice/index", object))
+		handle.Error(render(w,r, Hospice,"index", object))
 		return
 	}
-	handle.Error(render(w,r, path, object))
+	handle.Error(render(w,r, site, view, object))
 }

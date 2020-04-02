@@ -1,3 +1,4 @@
+{{define "base"}}
 <!DOCTYPE html>
 <html>
 
@@ -20,16 +21,16 @@
         <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
         <script type="text/javascript" src="/static/js/jquery.ratingbar.js"></script>
         <script type="text/javascript" src="/static/js/jquery.easing.1.3.js"></script>
-        
+
         <link rel="stylesheet" href="/static/css/main.css">
         <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
         <script src="/static/js/stars-reviews.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.js"></script>
-        
-        
-        
-        
+
+
+
+
         <!-- <script src="/static/js/animate.js"></script> -->
         <!-- Facebook Pixel Code -->
         <script>
@@ -117,7 +118,7 @@
             <div class="uk-width-1-1">
                 <div class="py2">
                     <h1 class="uk-text-title-colorized uk-text-hero"><span>Reviews</span></h1>
-                
+
                 </div>
             </div>
             <div class="uk-width-1-1 uk-padding-small">
@@ -140,7 +141,7 @@
                             <td class="bar-data" style="line-height: 30px;"><p class="rating">3 Star</p></td>
                             <td id="calc3" class="review_ratings">{{.Calc.Percentages.Three}}</td>
                             <td>{{.Calc.Total.Five}}</td>
-                            
+
                         </tr>
                         <tr onClick="window.location= '/home-health/reviews/2'" style="line-height: 30px;">
                             <td class="bar-data" style="line-height: 30px;"><p class="rating">2 Star</p></td>
@@ -155,7 +156,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <div id="options" uk-filter="target: #js-filter">
                 <div style="padding-left: 40px;" class="uk-tile uk-tile-secondary">
                     <ul class="uk-subnav uk-subnav-pill">
@@ -209,14 +210,14 @@
                         </li>
                     </ul>
                 </div>
-           
+
             {{if eq $count 0}}
             <ul id="js-filter" class="uk-child-width-1-1@m uk-child-width-1-1@m p2 uk-grid-match" uk-grid>
                 <li>
                     <div class="p1">
                         <div class="uk-card uk-card-default uk-padding-small reviews">
                             <div class="uk-card-body p2 uk-grid-match" uk-grid>
-                                <h2 class="uk-text-lead uk-text-center@s uk-text-center" 
+                                <h2 class="uk-text-lead uk-text-center@s uk-text-center"
                                     style="transform: capitilize">
                                     {{.Data.Title}}</h2>
                                 <p class="uk-text-lead uk-text-center@s uk-text-middle"></p>
@@ -254,9 +255,9 @@
                                             <span id="heart-{{.Model.ID}}" data-featured={{.Featured}}
                                                 onClick="setDataFeatured({{.Model.ID}});"
                                                 uk-icon="icon: heart; ratio: 1">
-                                                
+
                                             </span>
-                                            
+
                                         </div>
                                     </li>
                                     <li>
@@ -271,14 +272,14 @@
                                     </li>
                                 </ul>
                             </div>
-                                    
+
                             {{end}}
-                            
+
                             </div>
                     </div>
                     <div class="uk-card uk-card-default uk-padding-small reviews" id="review-{{.Model.ID}}">
                         <div class="uk-card-body p2">
-                            
+
                             <div class="flex items-start items-baseline uk-flex-column">
                                 {{if ne .Title ""}}
                                 <div>
@@ -298,7 +299,7 @@
                             <script>
                                 (function() {
                                     let favorited = document.getElementById('heart-{{.Model.ID}}')
-                                    
+
                                         if (favorited.dataset.featured == "true") {
                                             favorited.childNodes[1].childNodes[0].setAttribute('fill', 'red')
                                         }
@@ -330,14 +331,14 @@
                             <div class="uk-modal-header">
                                 <div class="flex uk-flex-wrap items-start items-baseline">
                                     <div>
-                                        
+
                                      {{if eq .Title ""}}
                                      <div class="uk-section-muted">
                                         <p class="uk-custom" style="display: none">Anonymous review</p>
                                     </div>
                                     {{else}}
                                          <h3 class="uk-text-capitalize uk-modal-title">{{.Title}}</h3>
-                                    {{end}}                                 
+                                    {{end}}
                                     </div>
                                     <div>
                                         <p class="uk-text-muted uk-text-small">
@@ -534,8 +535,8 @@
                         animate:		true,
                         duration:		1000,
                         ease:			"easeOutBounce",
-                        wrapperClass: "ratingbar_wrapper_custom", 
-                        innerClass: "ratingbar_inner_custom", 
+                        wrapperClass: "ratingbar_wrapper_custom",
+                        innerClass: "ratingbar_inner_custom",
                         textClass: "ratingbar_text_custom",
                         wrapperWidth: $(document).width() - 170,
                     }
@@ -548,15 +549,15 @@
                         $("#calc2 .ratingbar_wrapper_custom").attr('style', w)
                         $("#calc1 .ratingbar_wrapper_custom").attr('style', w)
                        update(w)
-                        
+
                     })
                     // useless function
                     function update(w) {
                         var config = {
                             // maxRating: 100,
                             // showText: true,
-                            // wrapperClass: "ratingbar_wrapper_custom", 
-                            // innerClass: "ratingbar_inner_custom", 
+                            // wrapperClass: "ratingbar_wrapper_custom",
+                            // innerClass: "ratingbar_inner_custom",
                             // textClass: "ratingbar_text_custom",
                             wrapperWidth: w,
                         }
@@ -564,7 +565,7 @@
                         }
 
                     function rejection(id) {
-                    
+
                         var xhr = new XMLHttpRequest();
                         xhr.open("POST", "/bd-admin/review/reject", true)
                         xhr.setRequestHeader("Content-Type", "application/json")
@@ -573,11 +574,11 @@
 
                             }
                         }
-                        
+
                     var data = {review_id: parseInt(id), user_id: parseInt({{$userID}}), body: "val"}
                     xhr.send(JSON.stringify(data))
                     }
-                
+
                     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
                     (function(){
                         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -590,12 +591,12 @@
 
                 function featureReview(ID, featured) {
                     console.log(featured)
-                    var xhr = new XMLHttpRequest(); 
+                    var xhr = new XMLHttpRequest();
                     xhr.open("POST", "/bd-admin/review/feature", true)
                     xhr.setRequestHeader("Content-Type", "application/json")
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
-                        
+
                         }
                     }
                     var bool_value = featured == "true" ? true : false
@@ -606,7 +607,7 @@
                 function setDataFeatured(id) {
                     console.log(id)
                     var featured = document.getElementById("heart-"+id)
-                    
+
                     if (featured.dataset.featured == "false") {
                         featured.childNodes[1].childNodes[0].setAttribute('fill', 'red')
                         featured.dataset.featured = "true"
@@ -615,9 +616,11 @@
                         featured.childNodes[1].childNodes[0].setAttribute('fill', 'white')
                     }
                         featureReview(id ,featured.dataset.featured)
-                }                         
+                }
             </script>
             </footer>
         </div>
     </body>
 </html>
+
+{{end}}

@@ -29,9 +29,6 @@ var (
     // PANIC should fix this dangerous or experimental code in production
     PANIC level = level{4}
 )
-type level struct {
-    int
-}
 
 type Handle struct{
     W http.ResponseWriter
@@ -45,6 +42,7 @@ type HandleLeveled struct {
     E error
     Es []error
     C context.Context
+    Cache *Cache
     *level
     L *log.Logger // std pkg logger support
 }
@@ -57,35 +55,11 @@ var (
 )
 
 // TestErr Simply for testing
-var TestErr = xerrors.New("test error handler")
+var TestErr error
 
 func init() {
+    TestErr = xerrors.New("test error handler")
 }
-
-// func TTLERRORX() (handle *HandleLeveled, m *http.Handler) {
-//     mux := chi.NewRouter()
-//     router := chi.Mux{}
-//     defer context.Background()
-//     mux.Get("/", func(writer http.ResponseWriter, request *http.Request) {
-//         handle := NewHandleLeveledWithWriter(writer, DEBUG)
-//         handle.WithLOGGING(&log.Logger{})
-//         handle.L.SetPrefix(fasttemplate.ExecuteString(stdTemp,"{{", "}}", map[string]interface{}{
-//             "host": request.Host,
-//             "line": xerrors.Caller(1),
-//             "why":  TestErr.Error(),
-//         }))
-//         pc, fn, line, _ := runtime.Caller(1)
-//         pre = fasttemplate.ExecuteString(pre, "{{", "}}", map[string]interface{}{
-//             "lvl":  handle.level,
-//         })
-//         print(fmt.Sprintf("\n%s[%s:%d] %v", runtime.FuncForPC(pc).Name(), fn, line, TestErr))
-//         handle.Error(TestErr)
-//     })
-//
-//     h := NewHandleLeveled()
-//     h.SetLevel(PANIC)
-// }
-// }
 
 func (h *Handle) WithLOGGING(l *log.Logger) *Handle {
     h.L = l
@@ -117,7 +91,7 @@ func NewHandleLeveledWithWriter(w http.ResponseWriter, lvl level) *HandleLeveled
 func NewHandleWithContext(ctx context.Context) *Handle {
     var err error
     if err != nil {
-        fmt.Println(">>> NOT NIL DUMB ASS <<<")
+        fmt.Println(">>> NOT NIL <<<")
     }
     return &Handle{
         E: err,
@@ -128,12 +102,36 @@ func NewHandleWithContext(ctx context.Context) *Handle {
 func NewHandleLeveledWithContext(ctx context.Context, lvl *level) *HandleLeveled {
     var err error
     if err != nil {
-        fmt.Println(">>> NOT NIL DUMB ASS <<<")
+        fmt.Println(">>> NOT NIL  <<<")
     }
     return &HandleLeveled{
         E: err,
         C: ctx,
         level: lvl,
+    }
+}
+
+func NewHandleLeveledWithCache(cache *Cache, lvl *level) *HandleLeveled {
+    var err error
+    if err != nil {
+        // debugging purposes
+        return nil
+    }
+    return &HandleLeveled{
+        E: err,
+        C: nil,
+        Cache: cache,
+        level: lvl,
+    }
+}
+
+
+func (h *HandleLeveled) CacheError(key string, err error) {
+    h.Cache.Set(key, err)
+}
+func (h *HandleLeveled) ErrorsFromCache() {
+    for _, value := range h.Cache.Object {
+        log.Error(value)
     }
 }
 
@@ -174,6 +172,6 @@ func (h *Handle) ErrorWithContext(err error) context.Context {
 
 func (h *HandleLeveled) Error(err error) *HandleLeveled {
     h.E = err
+    h.L.Error(err)
     return h
 }
-
