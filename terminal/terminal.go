@@ -48,8 +48,7 @@ var Colors map[int]func(text string) string
 func init() {
 	Colors = make(map[int]func(text string) string, 256)
 	for i := 0; i <= 256; i++ {
-		var a string
-		a = strconv.FormatInt(int64(i), 10)
+		var a string = strconv.FormatInt(int64(i), 10)
 		Colors[i] = ansi.ColorFunc(a)
 	}
 	fmt.Println(Colors[178]("Terminal Package loaded"))

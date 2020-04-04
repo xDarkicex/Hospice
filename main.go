@@ -2,13 +2,24 @@ package main
 
 import (
 	"fmt"
-	_ "github.com/labstack/gommon/log"
-	"github.com/xDarkicex/Hospice/server"
+	"io"
 	"net/http"
+	"os"
 	"runtime"
 	"strconv"
 	"time"
+
+	_ "github.com/labstack/gommon/log"
+
+	"github.com/xDarkicex/Hospice/helpers"
+	"github.com/xDarkicex/Hospice/server"
+	"github.com/xDarkicex/Hospice/terminal"
 )
+
+func inti() {
+	multiplex := io.MultiWriter(os.Stderr, os.Stdout)
+	helpers.Init(multiplex, multiplex, multiplex, multiplex, multiplex)
+}
 
 func main() {
 	var config = struct {
@@ -27,11 +38,10 @@ func main() {
 		IdleTimeout:       20 * time.Second,
 	}
 
-	fmt.Println(server.Color.Coral("server successfully configured"), server.Color.Blue("!"))
-	fmt.Println(fmt.Sprintf(server.Color.Coral("Server Architecture detected")+"=%s\n"+server.Color.Coral("Server CPU Count")+"=%s\n", server.Color.Blue(string(runtime.GOARCH)), server.Color.Blue(strconv.FormatInt(int64(runtime.NumCPU()), 10))))
+	fmt.Println(fmt.Sprintf(helpers.Color.Coral("Server Architecture detected")+"=%s\n"+helpers.Color.Coral("Server CPU Count")+"=%s\n", helpers.Color.Blue(string(runtime.GOARCH)), helpers.Color.Blue(strconv.FormatInt(int64(runtime.NumCPU()), 10))))
 	var address = config.Addr
-	fmt.Println("[" + server.Colors[218]("200") + "]" + server.Colors[212]("Now Listening ") + server.Color.PinkBold("ON ") + server.Color.Blue(address))
-	srv := server.NewServer(config)
-	server.Error.Fatalln(server.Color.RedBlink(srv.ListenAndServe().Error()))
+	fmt.Println("[" + terminal.Colors[218]("200") + "]" + terminal.Colors[212]("Now Listening ") + helpers.Color.PinkBold("ON ") + helpers.Color.Blue(address))
+	var srv = server.NewServer(config)
+	helpers.Error.Fatalln(helpers.Color.RedBlink(srv.ListenAndServe().Error()))
 
 }

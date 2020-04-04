@@ -32,7 +32,9 @@ func withoutHTML(w http.ResponseWriter, r *http.Request) string {
 func Render(w http.ResponseWriter, r *http.Request, site int, view string, object map[string]interface{}) {
 	handle := NewHandleWithWriter(w)
 	path := withoutHTML(w, r)
-	log.Warn(path)
+
+//	TODO: use true log package log
+	log.Error(LoggerTemplateMap["ErrorJSON"])
 	if path == "/" {
 		handle.Error(render(w,r, Splash,"splash", object))
 		return

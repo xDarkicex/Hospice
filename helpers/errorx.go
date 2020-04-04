@@ -90,9 +90,6 @@ func NewHandleLeveledWithWriter(w http.ResponseWriter, lvl level) *HandleLeveled
 
 func NewHandleWithContext(ctx context.Context) *Handle {
     var err error
-    if err != nil {
-        fmt.Println(">>> NOT NIL <<<")
-    }
     return &Handle{
         E: err,
         C:  context.WithValue(ctx, "error", err),
@@ -101,9 +98,6 @@ func NewHandleWithContext(ctx context.Context) *Handle {
 
 func NewHandleLeveledWithContext(ctx context.Context, lvl *level) *HandleLeveled {
     var err error
-    if err != nil {
-        fmt.Println(">>> NOT NIL  <<<")
-    }
     return &HandleLeveled{
         E: err,
         C: ctx,
@@ -113,10 +107,6 @@ func NewHandleLeveledWithContext(ctx context.Context, lvl *level) *HandleLeveled
 
 func NewHandleLeveledWithCache(cache *Cache, lvl *level) *HandleLeveled {
     var err error
-    if err != nil {
-        // debugging purposes
-        return nil
-    }
     return &HandleLeveled{
         E: err,
         C: nil,
