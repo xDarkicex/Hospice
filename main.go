@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"runtime"
@@ -42,6 +43,6 @@ func main() {
 	var address = config.Addr
 	fmt.Println("[" + terminal.Colors[218]("200") + "]" + terminal.Colors[212]("Now Listening ") + helpers.Color.PinkBold("ON ") + helpers.Color.Blue(address))
 	var srv = server.NewServer(config)
-	helpers.Error.Fatalln(helpers.Color.RedBlink(srv.ListenAndServe().Error()))
+	log.Fatalln(srv.ListenAndServe().Error())
 
 }

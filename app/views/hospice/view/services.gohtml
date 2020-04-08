@@ -1,296 +1,390 @@
-      {{define "content"}}
-        <div class="uk-section uk-preserve-color uk-align-middle" style="background-color:#f8f8f8;">
-            <div class="uk-grid-match uk-child-width-1-1@s uk-padding" uk-scrollspy="target: > div; cls: uk-animation-scale-up; " uk-grid>
-              <div style="line-height: 1.5rem">
-                <div class="uk-card uk-card-default uk-card-body">
-                  <div class="uk-panel">
-                    <h2 style="text-align: center;">{{print "What Is Hospice?"}}</h2>
+{{define "content"}}
+      <div class="uk-section uk-preserve-color uk-align-middle" style="background-color:#33bdf2;">
+        <div class="uk-grid-match uk-child-width-1-1@s uk-child-width-1-2@m uk-padding" uk-scrollspy="target: > div; cls: uk-animation-scale-up; " uk-grid>
+            <div style="line-height: 1.5rem">
+            <div class="uk-card uk-card-default uk-card-body">
+              <div class="uk-margin-top">
+                <div class="uk-panel">
+                  <h2 style="text-align: center;">{{print "What Is Hospice?"}}</h2>
+                  <div class="uk-cover-container uk-height-medium header-image" >
+                    <img src='/static/assets/services-1.jpg' alt="" uk-cover>
                   </div>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      Hospice is a philosophy of curated care and service for people with
-                      a terminal illness along with providing a support system to their loved ones.
-                      Hospice is about providing the best quality of life during the final stage of life.
-                    </p>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      Compassionate Care Hospice not only provides skilled pain management for the patient, but also emotional support,
-                      spiritual services, and grief support for family members following the death of a loved one.  Hospice cares for the person,
-                      not the disease, while supporting life and focusing on compassion, comfort, dignity and quality of life during the remaining months, weeks,
-                      days, hours of life.  Hospice neither hastens nor slows the natural progression of life.
-                    </p>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      Compassionate Care Hospice provides a dedicated team of professionals from a vast array of disciplines to your
-                      home: doctors, nurses, spiritual counselors, social workers and volunteers.  Our experienced team specializes in assisting
-                      the patient and family through the transition from designed care to comfort care.
-                      During this phase, no active or specialized therapies are undertaken. Patients are allowed the opportunity to transition with lessened or no pain,
-                      and with as much dignity, respect and independence as their condition will accommodate.
-                    </p>
-                    <div class="uk-panel">
-                      <h2 style="text-align: center;">{{print "Hospice Facts:"}}</h2>
-                    </div>
-                    <div class="uk-margin-top">
-                      <ul>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is the providing of care for a person who is terminally ill.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is not a physical location, like a hospital or nursing home.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice focuses on quality of life; it is most beneficial during the final six months of life expectancy.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is not a “death bed” service for people in the last 48 hours of life.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice gives the right of truth to everyone involved so they know accurately and truthfully
-                            what is happening to them so they may navigate how they wish to spend the remaining time in the most meaningful ways.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is the providing of care for a person who is terminally ill.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is not a place to send dying people to keep them ignorant of exactly what is happening to them.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is for people who have any and all terminal illnesses.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is not just for cancer patients.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is a realistic way to deal with a fatal diagnosis.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice offers hope, dignity and comfort.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is not giving up on hope or help.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is a family-oriented program that helps families and/or friends care for their loved one in the sanctuary of their own homes.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is not a substitute for the family or the family’s care, but rather a much needed addition.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is covered by Medicare, Medicaid and several other insurance providers. We never deny care, even for patients are unable to pay.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is not expensive.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice neither hastens nor prolongs death.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice lets nature run its course.
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Hospice is not euthanasia.
-                          </p>
-                        </li>
-                      </ul>
-                    <div class="uk-panel">
-                      <h2 style="text-align: center;">{{print "When to Consider Hospice?"}}</h2>
-                    </div>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                        For many of us, end-of-life discussions with family members are very difficult, and in most cases, nonexistent. Although challenging,
-                        it is best for families to share their wishes before the terminal state becomes an immediate reality. In many situations, patients with terminal
-                        illnesses may lose their ability to communicate with their near and dear, forcing family members to make uncomfortable decisions independently during
-                        an already stressful period.
-                        Hospice is for people who have a life expectancy of six months or less and have chosen to
-                        focus on the alleviation of pain and symptoms rather than healing treatment.  People considering hospice need to ask themselves
-                        just a few questions prior to enrolling with our services.
-                    </p>
-                    <div class="uk-panel">
-                      <h2 style="text-align: left;">{{print "Are You or a Loved One Facing a Life-Limiting Disease or Illness, Such As:"}}</h2>
-                    </div>
-                    <div class="uk-margin-top" style="line-height: 1.5rem">
-                      <ul>
-
-                      <li>
-                        <p class="uk-text-justify" style="line-height: 1.5rem">
-                          Cancer
-                        </p>
-                      </li>
-                      <li>
-                        <p class="uk-text-justify">
-                          Heart Disease
-                        </p>
-                      </li>
-                      <li>
-                        <p class="uk-text-justify">
-                          Alzheimer’s/Dementia
-                        </p>
-                      </li>
-                      <li>
-                        <p class="uk-text-justify">
-                          Respiratory Diseases
-                        </p>
-                      </li>
-                      <li>
-                        <p class="uk-text-justify">
-                          Neurologic Diseases
-                        </p>
-                      </li>
-                      <li>
-                        <p class="uk-text-justify">
-                          Liver/Renal Failure
-                        </p>
-                      </li>
-                      <li>
-                        <p class="uk-text-justify">
-                          Stroke or Coma
-                        </p>
-                      </li>
-                        <li>
-                          <p class="uk-text-justify">
-                            AIDS/HIV
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="uk-panel">
-                      <h2 style="text-align: center;">{{print "What are the Patient’s Goals and Wishes?"}}</h2>
-                    </div>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      Compassionate Care Hospice listens to our patients and designs a care plan based on their preferences for end-of-life treatment.
-                      This process known as Advance Care Planning (ACP) ensures the patient’s wishes are known and honored should they reach a point in their progression that prevents communication.
-                      Our team will then assemble a personalized care plan that includes certain procedures or interventions that should, or should not be pursued, and honors the patient’s wishes while
-                      focusing on the remaining time left with the utmost attention to quality of life. Our clinicians are experienced in assessing whether a patient is eligible for hospice, and can meet with the patient
-                      and family for a free assessment.
-                    </p>
-                    <div class="uk-panel">
-                      <h2 style="text-align: center;">{{print "Understanding the Practice"}}</h2>
-                    </div>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      Recognizing the rights of terminally ill patients and their families is fundamental. We know that it is extremely important to keep our patients
-                      and their family members informed of their clinical prognosis and updates in condition.
-                      An informed patient and family can more easily work through the decision-making process that determines how their end-of-life care is provided.
-                    </p>
-                    <div class="uk-panel">
-                      <h2 style="text-align: center;">{{print "Is the Patient Showing Signs of Decline and Losing Quality of Life?"}}</h2>
-                      <h3 style="text-align: left;">{{print "Factors to Consider if it’s Time for Hospice:"}}</h3>
-                    </div>
-                      <ul>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Has a doctor certified the patient has six months or less to live?
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" style="line-height: 1.5rem">
-                            Are curative treatments no longer effective or  are they creating side effects, undue suffering or discomfort?
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" >
-                            Does the patient no longer wish to be hospitalized?
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" >
-                            Is the patient losing the ability to perform the activities of daily living (eating, dressing, personal hygiene, maintaining continence, transferring)?
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" >
-                            Has the patient had multiple hospitalizations or emergency room visits?
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify" >
-                            Has the patient lost 10% or more of body weight?
-                          </p>
-                        </li>
-                        <li>
-                          <p class="uk-text-justify">
-                            Is the patients physical activity or mental alertness declining?
-                          </p>
-                        </li>
-
-                      </ul>
-                    </div>
-                    <div class="uk-panel">
-                      <h2 style="text-align: center;">{{print "Patients Live Longer and More Comfortable with Hospice"}}</h2>
-                    </div>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      In March 2007 National Hospice and Palliative Care Organization conducted a study looking at 4,493 Medicare beneficiaries with some of the most common diagnoses leading to death.
-                      Patients who received hospice services lived on average, 29 days longer than those who did not receive hospice care and lived a better quality of life.
-                    </p>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      There is no time limit for a patient to receive hospice benefits. Hospice is for patients who are expected to live six months or less,
-                      but can be extended if the patient continues to meet the criteria. If our team determines that a patient’s prognosis is extended, we will discharge
-                      the patient from our service and carefully transition the patient with an appropriate plan in place.
-                    </p>
-                    <div class="uk-panel">
-                      <h2 style="text-align: center;">{{print "Bereavement Care – Emotional Support"}}</h2>
-                    </div>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      Upon our initial visit, we will identify people in need of bereavement support prior to and following the death of the dearly departed.
-                      Our bereavement program offers support and counseling to the patient, the family, loved ones and any care staff, for a minimum of thirteen months
-                      following a patient’s passing.
-                    </p>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      Our goal is to empower families and loved ones to recognize and develop skills to manage grief, while learning to adjust to the passing of a loved one.
-                      Our program aims to prevent the onset of grief related physical and mental health issues.
-                    </p>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      We revere the human experience, we offer support services for the family after the loved one has departed.
-                      We are reachable every hour of every day. A dedicated hospice care nurse is always available by phone with the ability to expedite further medical treatment.
-                      Our multi-disciplinary staff is ready to respond whenever needed for a medical or emotional emergency.
-                    </p>
-                    <div class="uk-panel">
-                      <h2 style="text-align: left;">{{print "Respite Care:"}}</h2>
-                    </div>
-                    <p class="uk-text-justify" style="line-height: 1.5rem">
-                      Caregivers and family members often experience stress and become overwhelmed in caring for their loved one,
-                      so we offer an opportunity for them to take a break and recharge during an up to five-day relief period known as Respite.
-                      During this managed short-term stay, the patient will be admitted to a fully accredited inpatient facility
-                      where our services will continue, so that caregivers and family members may rest and recover.
-                      This is also an opportunity for you to enjoy a short vacation knowing that your loved one is being cared for.
-                    </p>
-                  </div>
+                </div>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.7/js/uikit.min.js"></script>
+                  <script>
+                    var IMG_HEADER = document.querySelector('header-image')
+                    console.log("loaded")
+                    UIkit.img(IMG_HEADER);
+                  </script>
+                    <ul class="uk-list">
+                    <li>
+                      <p class="uk-text-justify" style="line-height: 2.5rem">
+                        Hospice is a philosophy of curated care and service for people with
+                        a terminal illness along with providing a support system to their loved ones.
+                        Hospice is about providing the best quality of life during the final stage of life.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify" style="line-height: 2.5rem">
+                        Compassionate Care Hospice not only provides skilled pain management for the patient, but also emotional support,
+                        spiritual services, and grief support for family members following the death of a loved one.  Hospice cares for the person,
+                        not the disease, while supporting life and focusing on compassion, comfort, dignity and quality of life during the remaining months, weeks,
+                        days, hours of life.  Hospice neither hastens nor slows the natural progression of life.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify" style="line-height: 2.5rem">
+                        Compassionate Care Hospice provides a dedicated team of professionals from a vast array of disciplines to your
+                        home: doctors, nurses, spiritual counselors, social workers and volunteers.  Our experienced team specializes in assisting
+                        the patient and family through the transition from designed care to comfort care.
+                        During this phase, no active or specialized therapies are undertaken. Patients are allowed the opportunity to transition with lessened or no pain,
+                        and with as much dignity, respect and independence as their condition will accommodate.
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
+            <div style="line-height: 1.5rem">
+            <div class="uk-card uk-card-default uk-card-body">
+              <div class="uk-margin-top">
+                <div class="uk-panel">
+                  <h2 style="text-align: center;">{{print "Hospice Facts:"}}</h2>
+                  <div class="uk-cover-container uk-height-medium header-image" >
+                    <img src='/static/assets/services-2.jpg' alt="" uk-cover>
+                  </div>
+                </div>
+                <ul class="uk-list uk-list-divider">
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is the providing of care for a person who is terminally ill.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is not a physical location, like a hospital or nursing home.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice focuses on quality of life; it is most beneficial during the final six months of life expectancy.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is not a “death bed” service for people in the last 48 hours of life.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice gives the right of truth to everyone involved so they know accurately and truthfully
+                      what is happening to them so they may navigate how they wish to spend the remaining time in the most meaningful ways.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is the providing of care for a person who is terminally ill.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is not a place to send dying people to keep them ignorant of exactly what is happening to them.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is for people who have any and all terminal illnesses.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is not just for cancer patients.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is a realistic way to deal with a fatal diagnosis.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice offers hope, dignity and comfort.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is not giving up on hope or help.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is a family-oriented program that helps families and/or friends care for their loved one in the sanctuary of their own homes.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is not a substitute for the family or the family’s care, but rather a much needed addition.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is covered by Medicare, Medicaid and several other insurance providers. We never deny care, even for patients are unable to pay.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is not expensive.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice neither hastens nor prolongs death.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice lets nature run its course.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Hospice is not euthanasia.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-      {{end}}
+            <div style="line-height: 2.5rem">
+            <div class="uk-card uk-card-default uk-card-body">
+              <div class="uk-margin-top">
+                <div class="uk-panel">
+                  <h2 style="text-align: center;">{{print "When to Consider Hospice?"}}</h2>
+                  <br />
+                  <div class="uk-cover-container uk-height-medium header-image" >
+                    <img src='/static/assets/services-3.jpg' alt="" uk-cover>
+                  </div>
+                </div>
+                  <p class="uk-text-justify" style="line-height: 2.5rem">
+                    For many of us, end-of-life discussions with family members are very difficult, and in most cases, nonexistent. Although challenging,
+                    it is best for families to share their wishes before the terminal state becomes an immediate reality. In many situations, patients with terminal
+                    illnesses may lose their ability to communicate with their near and dear, forcing family members to make uncomfortable decisions independently during
+                    an already stressful period.
+                    Hospice is for people who have a life expectancy of six months or less and have chosen to
+                    focus on the alleviation of pain and symptoms rather than healing treatment.  People considering hospice need to ask themselves
+                    just a few questions prior to enrolling with our services.
+                  </p>
+              </div>
+            </div>
+          </div>
+            <div style="line-height: 1.5rem">
+            <div class="uk-card uk-card-default uk-card-body">
+              <div class="uk-margin-top">
+                <div class="uk-panel">
+                  <h2 style="text-align: left;">{{print "Are You or a Loved One Facing a Life-Limiting Disease or Illness, Such As:"}}</h2>
+                  <div class="uk-cover-container uk-height-medium header-image" >
+                    <img src='/static/assets/services-2.jpg' alt="" uk-cover>
+                  </div>
+                </div>
+                <ul class="uk-list uk-list-divider">
+                  <li>
+                    <p class="uk-text-justify" style="line-height: 1.5rem">
+                      Cancer
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify">
+                      Heart Disease
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify">
+                      Alzheimer’s/Dementia
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify">
+                      Respiratory Diseases
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify">
+                      Neurologic Diseases
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify">
+                      Liver/Renal Failure
+                    </p>
+                  </li>
+                  <li>
+                    <p class="uk-text-justify">
+                      Stroke or Coma
+                    </p>
+                  </li>
+                    <li>
+                      <p class="uk-text-justify">
+                        AIDS/HIV
+                      </p>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+            <div style="line-height: 1.5rem">
+            <div class="uk-card uk-card-default uk-card-body">
+              <div class="uk-margin-top">
+                <div class="uk-panel">
+                  <h2 style="text-align: center;">{{print "What are the Patient’s Goals and Wishes?"}}</h2>
+                  <div class="uk-cover-container uk-height-medium header-image" >
+                    <img src='/static/assets/services-2.jpg' alt="" uk-cover>
+                  </div>
+                </div>
+                <p class="uk-text-justify" style="line-height: 2.5rem">
+                  Compassionate Care Hospice listens to our patients and designs a care plan based on their preferences for end-of-life treatment.
+                  This process known as Advance Care Planning (ACP) ensures the patient’s wishes are known and honored should they reach a point in their progression that prevents communication.
+                  Our team will then assemble a personalized care plan that includes certain procedures or interventions that should, or should not be pursued, and honors the patient’s wishes while
+                  focusing on the remaining time left with the utmost attention to quality of life. Our clinicians are experienced in assessing whether a patient is eligible for hospice, and can meet with the patient
+                  and family for a free assessment.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div style="line-height: 1.5rem">
+            <div class="uk-card uk-card-default uk-card-body">
+              <div class="uk-margin-top">
+                <div class="uk-panel">
+                  <h2 style="text-align: center;">{{print "Understanding the Practice"}}</h2>
+                  <div class="uk-cover-container uk-height-medium header-image" >
+                    <img src='/static/assets/services-2.jpg' alt="" uk-cover>
+                  </div>
+                </div>
+                <p class="uk-text-justify" style="line-height: 2.5rem">
+                  Recognizing the rights of terminally ill patients and their families is fundamental. We know that it is extremely important to keep our patients
+                  and their family members informed of their clinical prognosis and updates in condition.
+                  An informed patient and family can more easily work through the decision-making process that determines how their end-of-life care is provided.
+                </p>
+              </div>
+            </div>
+          </div>
+            <div style="line-height: 1.5rem">
+            <div class="uk-card uk-card-default uk-card-body">
+              <div class="uk-margin-top">
+                <div class="uk-panel">
+                  <h2 style="text-align: center;">{{print "Is the Patient Showing Signs of Decline and Losing Quality of Life?"}}</h2>
+                  <h3 style="text-align: left;">{{print "Factors to Consider if it’s Time for Hospice:"}}</h3>
+                  <div class="uk-cover-container uk-height-medium header-image" >
+                    <img src='/static/assets/services-2.jpg' alt="" uk-cover>
+                  </div>
+                </div>
+                <ul>
+              <li>
+                <p class="uk-text-justify" style="line-height: 1.5rem">
+                  Has a doctor certified the patient has six months or less to live?
+                </p>
+              </li>
+              <li>
+                <p class="uk-text-justify" style="line-height: 1.5rem">
+                  Are curative treatments no longer effective or  are they creating side effects, undue suffering or discomfort?
+                </p>
+              </li>
+              <li>
+                <p class="uk-text-justify" >
+                  Does the patient no longer wish to be hospitalized?
+                </p>
+              </li>
+              <li>
+                <p class="uk-text-justify" >
+                  Is the patient losing the ability to perform the activities of daily living (eating, dressing, personal hygiene, maintaining continence, transferring)?
+                </p>
+              </li>
+              <li>
+                <p class="uk-text-justify" >
+                  Has the patient had multiple hospitalizations or emergency room visits?
+                </p>
+              </li>
+              <li>
+                <p class="uk-text-justify" >
+                  Has the patient lost 10% or more of body weight?
+                </p>
+              </li>
+              <li>
+                <p class="uk-text-justify">
+                  Is the patients physical activity or mental alertness declining?
+                </p>
+              </li>
+
+            </ul>
+              </div>
+            </div>
+          </div>
+            <div style="line-height: 1.5rem">
+            <div class="uk-card uk-card-default uk-card-body">
+              <div class="uk-margin-top">
+                <div class="uk-panel">
+                  <h2 style="text-align: center;">{{print "Patients Live Longer and More Comfortable with Hospice"}}</h2>
+                  <div class="uk-cover-container uk-height-medium header-image" >
+                    <img src='/static/assets/services-2.jpg' alt="" uk-cover>
+                  </div>
+                </div>
+                <p class="uk-text-justify" style="line-height: 2.5rem">
+                  In March 2007 National Hospice and Palliative Care Organization conducted a study looking at 4,493 Medicare beneficiaries with some of the most common diagnoses leading to death.
+                  Patients who received hospice services lived on average, 29 days longer than those who did not receive hospice care and lived a better quality of life.
+                </p>
+                <p class="uk-text-justify" style="line-height: 2.5rem">
+                  There is no time limit for a patient to receive hospice benefits. Hospice is for patients who are expected to live six months or less,
+                  but can be extended if the patient continues to meet the criteria. If our team determines that a patient’s prognosis is extended, we will discharge
+                  the patient from our service and carefully transition the patient with an appropriate plan in place.
+                </p>
+              </div>
+            </div>
+          </div>
+            <div style="line-height: 1.5rem">
+            <div class="uk-card uk-card-default uk-card-body">
+              <div class="uk-margin-top">
+                <div class="uk-panel">
+                  <h2 style="text-align: center;">{{print "Bereavement Care – Emotional Support"}}</h2>
+                  <div class="uk-cover-container uk-height-medium header-image" >
+                    <img src='/static/assets/services-2.jpg' alt="" uk-cover>
+                  </div>
+                </div>
+                <p class="uk-text-justify" style="line-height: 2.5rem">
+                  Upon our initial visit, we will identify people in need of bereavement support prior to and following the death of the dearly departed.
+                  Our bereavement program offers support and counseling to the patient, the family, loved ones and any care staff, for a minimum of thirteen months
+                  following a patient’s passing.
+                </p>
+                <p class="uk-text-justify" style="line-height: 2.5rem">
+                  Our goal is to empower families and loved ones to recognize and develop skills to manage grief, while learning to adjust to the passing of a loved one.
+                  Our program aims to prevent the onset of grief related physical and mental health issues.
+                </p>
+                <p class="uk-text-justify" style="line-height: 2.5rem">
+                  We revere the human experience, we offer support services for the family after the loved one has departed.
+                  We are reachable every hour of every day. A dedicated hospice care nurse is always available by phone with the ability to expedite further medical treatment.
+                  Our multi-disciplinary staff is ready to respond whenever needed for a medical or emotional emergency.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div style="line-height: 1.5rem">
+            <div class="uk-card uk-card-default uk-card-body">
+              <div class="uk-margin-top">
+                <div class="uk-panel">
+                  <h2 style="text-align: left;">{{print "Respite Care:"}}</h2>
+                  <div class="uk-cover-container uk-height-medium header-image" >
+                    <img src='/static/assets/services-2.jpg' alt="" uk-cover>
+                  </div>
+                </div>
+                <p class="uk-text-justify" style="line-height: 2.5rem">
+                  Caregivers and family members often experience stress and become overwhelmed in caring for their loved one,
+                  so we offer an opportunity for them to take a break and recharge during an up to five-day relief period known as Respite.
+                  During this managed short-term stay, the patient will be admitted to a fully accredited inpatient facility
+                  where our services will continue, so that caregivers and family members may rest and recover.
+                  This is also an opportunity for you to enjoy a short vacation knowing that your loved one is being cared for.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+{{end}}
   </body>
 </html>
