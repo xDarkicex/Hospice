@@ -9,6 +9,7 @@ require (
 	github.com/joho/godotenv v1.3.1-0.20200301204615-d6ee6871f21d
 	github.com/labstack/gommon v0.3.0
 	github.com/mgutz/ansi v0.0.0-20170206155736-9520e82c474b
+	github.com/mitchellh/gox v1.0.1 // indirect
 	github.com/scorredoira/email v0.0.0-20191107070024-dc7b732c55da
 	github.com/valyala/fasttemplate v1.1.0
 	golang.org/x/net v0.0.0-20190108155000-395948e2f546
