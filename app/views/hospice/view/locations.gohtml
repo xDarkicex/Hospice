@@ -1,61 +1,81 @@
 {{define "content"}}
-          <div uk-grid>
-              <div class="uk-width-1-1 uk-text-center">
+<style>
+    #resources span {
+        color:white;
+        text-align: left;
+    }
+    #resources a {
+        color: white;
+    }
 
-                      <br />
-                  </div>
-                  <div class="uk-width-1-1">
-                      <div class="uk-container">
-                          <p class="uk-text-large uk-lead uk-text-center">We are located in North Fresno and our service spans the greater Fresno region, including the counties of Madera, Kings and Fresno. Our staff is multi-cultural and speak all of the languages prevalent in Central California, we also have access to a language line to address the speakers of languages that are not commonly found here. </p>
+    #resources > h1 > span {
+          color: #151515;
+      }
+    #resources > h1 > span::after,  #resources > h1 > span::before {
+        border-bottom: 1px solid #151515;
+    }
+    .uk-heading-line>::after, .uk-heading-line>::before {
+        border-bottom: 1px solid #33bdf2;
+    }
+</style>
+              <div>
+                <div class="uk-width-1-1 uk-text-center uk-margin">
+                    <br />
+                    <div class="uk-width-1-1">
+                        <div class="uk-container">
+                            <p class="uk-text-large uk-lead uk-text-center">We are located in North Fresno and our service spans the greater Fresno region, including the counties of Madera, Kings and Fresno. Our staff is multi-cultural and speak all of the languages prevalent in Central California, we also have access to a language line to address the speakers of languages that are not commonly found here. </p>
+                        </div>
+                    </div>
+                    <div class="uk-padding"></div>
+<!--                     this starts  -->
+                    <div class="uk-section-primary">
+                        <div class="uk-padding"></div>
+                        <div class="uk-padding" id="resources">
+                            <h1 class="uk-heading-line uk-text-center">
+                        <span>
+                          CAREERS
+                        </span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="uk-child-width-1-2 uk-grid-collapse uk-grid" uk-grid="" id="resources">
+                        <div class="uk-background-primary uk-padding uk-width-1-2@m uk-width-1-1@s uk-first-column">
+                            <h3 class="uk-heading-divider" style="color:white;">Fresno</h3>
+                            <div uk-grid="" class="uk-grid">
+                                <div class="uk-width-1-2 uk-first-column">
+                                    <img src="/static/assets/fresno.jpg" alt="fresno icon">
+                                </div>
+                                <div class="uk-width-1-2"><span class="uk-text-left uk-text-bold">Fresno, California</span><br><span class="uk-text-left">7545 N. Del Mar Ave, </span><br><span class="uk-text-left">Suite 103, 104 &amp; 204 </span><br><span class="uk-text-left">Fresno, California 93711</span><br><span class="uk-text-left"><a href="tel:559-432-2003">1(559) 432-2003</a></span></div>
+                            </div>
+                        </div>
+                        <div class="uk-background-primary uk-padding uk-width-1-2@m uk-width-1-1@s">
+                            <h3 class="uk-heading-divider" style="color:white;">Bakersfield</h3>
+                            <div uk-grid="" class="uk-grid">
+                                <div class="uk-width-1-2 uk-first-column"><img src="/static/assets/bakersfield.jpg"></div>
+                                <div class="uk-width-1-2"><span class="uk-text-left uk-text-bold">Bakersfield, California</span><br><span class="uk-text-left">5201 California Ave, </span><br><span class="uk-text-left">Suite 255 </span><br><span class="uk-text-left">Bakersfield, California 93309</span><br><span class="uk-text-left"><a href="tel:661-846-2833">1(661) 846-2833</a></span></div>
+                            </div>
+                        </div>
+                    </div>
+<!--                    ends here-->
+                    <div class="uk-section-secondary">
+                      <div>
+                          <div class="uk-container">
+                              <div class="uk-padding">
+                                  <h1 class="uk-heading-line uk-text-center">
+                                    <span>
+                                        MAP
+                                    </span>
+                                  </h1>
+                              </div>
+                          </div>
                       </div>
-                  </div>
-              </div>
-          </div>
-          <style>
-              #resources span {
-                  color:white;
-                  text-align: left;
-              }
-              #resources a {
-                  color: white;
-              }
-          </style>
-          <div class="uk-width-1-1 uk-padding">
-              <h1 class="uk-text-center uk-heading-line"><span>Locations</span></h1>
-          </div>
-          <div class="uk-child-width-1-2 uk-grid-collapse" uk-grid id="resources">
-              <div class="uk-background-primary uk-padding uk-width-1-2@m uk-width-1-1@s">
-                  <h3 class="uk-heading-divider" style="color:white;">Fresno</h3>
-                  <div uk-grid>
-                      <div class="uk-width-1-2">
-                          <img src="/static/assets/fresno.jpg" alt="fresno icon">
+
+                          <div class="uk-padding">
+                              <div id="map"></div>
+                          </div>
                       </div>
-                      <div class="uk-width-1-2"><span class="uk-text-left uk-text-bold">Fresno, California</span><br><span class="uk-text-left">7545 N. Del Mar Ave, </span><br><span class="uk-text-left">Suite 103, 104 & 204 </span><br><span class="uk-text-left">Fresno, California 93711</span><br><span class="uk-text-left"><a href="tel:559-432-2003">1(559) 432-2003</a></span></div>
-                  </div>
-              </div>
-              <div class="uk-background-primary uk-padding uk-width-1-2@m uk-width-1-1@s">
-                  <h3 class="uk-heading-divider" style="color:white;">Bakersfield</h3>
-                  <div uk-grid>
-                      <div class="uk-width-1-2"><img src="/static/assets/bakersfield.jpg"></div>
-                      <div class="uk-width-1-2"><span class="uk-text-left uk-text-bold">Bakersfield, California</span><br><span class="uk-text-left">5201 California Ave, </span><br><span class="uk-text-left">Suite 255 </span><br><span class="uk-text-left">Bakersfield, California 93309</span><br><span class="uk-text-left"><a href="tel:661-846-2833">1(661) 846-2833</a></span></div>
-                  </div>
-              </div>
-          </div>
-          <div class="uk-child-width-1-2 uk-grid-collapse" uk-grid id="resources">
-              <div class="uk-background-primary uk-padding uk-width-1-2@m uk-width-1-1@s">
-                  <h3 class="uk-heading-divider" style="color:white;">Modesto</h3>
-                  <div uk-grid>
-                      <div class="uk-width-1-2"><img src="/static/assets/modesto.jpg"></div>
-                      <div class="uk-width-1-2"><span class="uk-text-left uk-text-bold">Modesto, California</span><br><span class="uk-text-left">1165 Scenic Drive,</span><br><span class="uk-text-left">Suite C-1 </span><br><span class="uk-text-left">Modesto, California 95350</span><br><span class="uk-text-left"><a href="tel:209-622-1058">1(209) 622-1058</a></span></div>
-                  </div>
-              </div>
-              <div class="uk-background-primary uk-padding uk-width-1-2@m uk-width-1-1@s"></div>
-          </div>
-          <div class="uk-container">
-              <p class="uk-text-center uk-padding-small">We have 3 office locations and service 8 counties, listed from north to south: Stanislaus, Mariposa, Merced, Madera, Fresno, Tulare, Kings and Kern Counties. </p>
-          </div>
-          <div id="map"></div>
-          <script>
+{{/*<div class="uk-background-primary uk-padding uk-width-1-2@m uk-width-1-1@s">*/}}
+                    <script>
               function initMap() {
                   let position = {lat: 36.6467741, lng: -119.7986504}
                   let map = new google.maps.Map(document.getElementById('map'), {
@@ -206,7 +226,8 @@
                   });
               }
           </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfKnbAc26lvXCm5cjlN8rhoIUngITo9JE&amp;callback=initMap" async defer></script><!--Start of Tawk.to Script-->
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfKnbAc26lvXCm5cjlN8rhoIUngITo9JE&amp;callback=initMap" async defer></script><!--Start of Tawk.to Script-->
+
 {{end}}
   </body>
 </html>

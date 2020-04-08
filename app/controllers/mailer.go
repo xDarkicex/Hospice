@@ -10,6 +10,7 @@ import (
 	"net/mail"
 	"net/smtp"
 	"net/url"
+	"os"
 	"regexp"
 	"time"
 
@@ -25,11 +26,6 @@ type RecaptchaResponse struct {
 
 type Mailer Controllers
 
-
-
-
-
-
 func validate_email(email string) bool {
 	regex, err := regexp.Compile(`\S+@\S+`)
 	if err != nil {
@@ -43,7 +39,7 @@ func validate_email(email string) bool {
 
 func validate_google_rechaptcha(chaptcha string) (r RecaptchaResponse) {
 	google_check := url.Values{
-		"secret":   {"6LchUqEUAAAAALM_u_okQofqiw7Htdcp96jJGn1p"},
+		"secret":   {os.Getenv("GOOGLE_KEY")},
 		"response": {chaptcha},
 	}
 	resp, err := http.PostForm("https://www.google.com/recaptcha/api/siteverify", google_check)
@@ -91,7 +87,6 @@ func GenerateCookie(status string, success bool) *http.Cookie {
 	return cookie
 }
 
-
 func (mailer *Mailer) ContactCareers(res http.ResponseWriter, req *http.Request) {
 	var cookie *http.Cookie
 	name := req.FormValue("contact_name")
@@ -117,16 +112,16 @@ func (mailer *Mailer) ContactCareers(res http.ResponseWriter, req *http.Request)
 
 	subject := "Contact Request from " + name
 	msg := "New Contact request from " + name + "\n" +
-			"Address: " + add + "\n" +
-			"Email: " + e + "\n" +
-			"Phone Number: " + phone + "\n" +
-			"Contact Message: " + "\n" +
-			body
+		"Address: " + add + "\n" +
+		"Email: " + e + "\n" +
+		"Phone Number: " + phone + "\n" +
+		"Contact Message: " + "\n" +
+		body
 	m := email.NewMessage(subject, msg)
 	m.From = mail.Address{Name: "Jobs", Address: "admin@cchha.com"}
 	m.To = []string{"jobs@cchha.com"}
 	// HomeHealth2017
-	auth := smtp.PlainAuth("", "admin@cchha.com", "Vh2@cchha#G0!", "smtp.gmail.com")
+	auth := smtp.PlainAuth("", os.Getenv("EMAIL_ADDRESS"), os.Getenv("EMAIL_PASSWORD"), "smtp.gmail.com")
 	SMTP := "smtp.gmail.com:587"
 	if err := email.Send(SMTP, auth, m); err != nil {
 		fmt.Println("Error on send: ")
@@ -138,7 +133,7 @@ func (mailer *Mailer) ContactCareers(res http.ResponseWriter, req *http.Request)
 	http.Redirect(res, req, "/", http.StatusFound)
 }
 
-func(mailer *Mailer) Contact(res http.ResponseWriter, req *http.Request) {
+func (mailer *Mailer) Contact(res http.ResponseWriter, req *http.Request) {
 	var cookie *http.Cookie
 	name := req.FormValue("contact_name")
 	e := req.FormValue("contact_email")
@@ -163,16 +158,16 @@ func(mailer *Mailer) Contact(res http.ResponseWriter, req *http.Request) {
 
 	subject := "Contact Request from " + name
 	msg := "New Contact request from " + name + "\n" +
-			"Address: " + add + "\n" +
-			"Email: " + e + "\n" +
-			"Phone Number: " + phone + "\n" +
-			"Contact Message: " + "\n" +
-			body
+		"Address: " + add + "\n" +
+		"Email: " + e + "\n" +
+		"Phone Number: " + phone + "\n" +
+		"Contact Message: " + "\n" +
+		body
 	m := email.NewMessage(subject, msg)
 	m.From = mail.Address{Name: "Jobs", Address: "admin@cchha.com"}
 	m.To = []string{"info@cchha.com"}
 	// HomeHealth2017
-	auth := smtp.PlainAuth("", "admin@cchha.com", "Vh2@cchha#G0!", "smtp.gmail.com")
+	auth := smtp.PlainAuth("", os.Getenv("EMAIL_ADDRESS"), os.Getenv("EMAIL_PASSWORD"), "smtp.gmail.com")
 	SMTP := "smtp.gmail.com:587"
 	if err := email.Send(SMTP, auth, m); err != nil {
 		fmt.Println("Error on send: ")
