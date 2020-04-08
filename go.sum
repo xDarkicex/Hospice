@@ -7,6 +7,10 @@ github.com/go-chi/chi/v4 v4.0.0-rc1 h1:Yv+WYpL04c1RUcMGrPLpITSDxXt48VyxCPgyGyzHY
 github.com/go-chi/chi/v4 v4.0.0-rc1/go.mod h1:Yfiy+5nynjDc7IMJiguACIro1KxlGW2dLUqcroaEUEY=
 github.com/google/uuid v1.1.1 h1:Gkbcsh/GbpXz7lPftLA3P6TYMwjCLYm83jiFQZF/3gY=
 github.com/google/uuid v1.1.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
+github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
+github.com/joho/godotenv v1.3.1-0.20200301204615-d6ee6871f21d h1:LRaxUhLYBFLUpSZk7X173VtzdRwPtu7HSs6avaT7lbU=
+github.com/joho/godotenv v1.3.1-0.20200301204615-d6ee6871f21d/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
 github.com/labstack/gommon v0.3.0 h1:JEeO0bvc78PKdyHxloTKiF8BD5iGrH8T6MSeGvSgob0=
 github.com/labstack/gommon v0.3.0/go.mod h1:MULnywXg0yavhxWKc+lOruYdAhDwPK9wf0OL7NoOu+k=
 github.com/mattn/go-colorable v0.1.2 h1:/bC9yWikZXAL9uJdulbSfyVNIR3n3trXl+v8+1sx8mU=

@@ -6,6 +6,7 @@ require (
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
 	github.com/go-chi/chi/v4 v4.0.0-rc1
 	github.com/google/uuid v1.1.1
+	github.com/joho/godotenv v1.3.1-0.20200301204615-d6ee6871f21d // indirect
 	github.com/labstack/gommon v0.3.0
 	github.com/mgutz/ansi v0.0.0-20170206155736-9520e82c474b
 	github.com/scorredoira/email v0.0.0-20191107070024-dc7b732c55da

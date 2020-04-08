@@ -23,14 +23,6 @@ import (
 var Error = helpers.Error
 
 func init() {
-	// helpers.Default.Print("...")
-	// helpers.Info.Println(".....")
-	// helpers.Warn.Println("Loading....")
-
-	// helpers.Error.Println(color.PinkBold("Done loading colors"))
-
-	// Mux = NewRouter()
-	// helpers.Error.Println(color.Blue("Routes Registration complete"))
 
 }
 
@@ -152,17 +144,20 @@ func NewRouter() *chi.Mux {
 	return router
 }
 
-var Port = ":3000"
-
 type server struct {
 	Port      string
+	IP string
 	Address   string
-	ENV       e
+	ENV       *Env
 	StartTime time.Time
-	Router    *http.Server
+	Handler *chi.Mux
+	ReadTimeout       time.Duration
+	ReadHeaderTimeout time.Duration
+	WriteTimeout      time.Duration
+	IdleTimeout       time.Duration
 }
 
-type e struct {
+type Env struct {
 	Production  bool
 	Development bool
 }
@@ -171,57 +166,95 @@ var color = terminal.NewTerminalColor()
 var colors = terminal.Colors
 var Mux *chi.Mux
 
-func NewServer(config interface{}) *http.Server {
+func NewServer(config interface{}) (err error, srv *server) {
 	switch c := config.(type) {
 	case map[string]interface{}:
 		config, ok := config.(map[string]interface{})
 		if !ok {
 			log.Print(color.RedBlink("Config loaded incorrectly please look at configuration file for errors"))
-			return nil
+			return errors.New("config loaded incorrectly please look at configuration file for errors"), nil
 		}
-		addr, ok := config["addr"].(string)
+		address, ok := config["address"].(string)
 		if !ok {
-			log.Panic(addr)
+			log.Panic(address)
+			return errors.New("failed to load address"), nil
 		}
-		handler, ok := config["handler"].(http.Handler)
+		handler, ok := config["handler"].(*chi.Mux)
 		if !ok {
 			log.Panic(handler)
+			return errors.New("failed to load handler"), nil
 		}
 		readTimeout, ok := config["readTimeout"].(time.Duration)
 		if !ok {
 			log.Panic(readTimeout)
+			return errors.New("failed to load read timeout"), nil
 		}
 		readHeaderTimeout, ok := config["readHeaderTimeout"].(time.Duration)
 		if !ok {
-			log.Panic(readTimeout)
+			log.Panic(readHeaderTimeout)
+			return errors.New("failed to load read header timeout"), nil
 		}
 		writeTimeout, ok := config["writeTimeout"].(time.Duration)
 		if !ok {
 			log.Print(writeTimeout)
+			return errors.New("failed to load write timeout"), nil
 		}
 		ideaTimeout, ok := config["ideaTimeout"].(time.Duration)
 		if !ok {
 			log.Print(ideaTimeout)
+			return errors.New("failed to load ideaTimeout"), nil
 		}
-		return &http.Server{
-			Addr:              addr,
+		port, ok := config["port"].(string)
+		if !ok {
+			log.Print(ideaTimeout)
+			return errors.New("failed to load port"), nil
+		}
+		IP, ok := config["IP"].(string)
+		if !ok {
+			log.Print(IP)
+			return errors.New("failed to load ip"), nil
+		}
+		ENV, ok := config["env"].(*Env)
+		if !ok {
+			log.Print(ENV)
+			return errors.New("failed to load env"), nil
+		}
+		startUpTime, ok := config["start_up_time"].(time.Time)
+		if !ok {
+			log.Print(startUpTime)
+			return errors.New("failed to load startUpTime"), nil
+		}
+		return nil, &server{
+			Address: address,
+			Port:              port,
+			IP: IP,
+			ENV: ENV,
 			Handler:           handler,
+			StartTime: startUpTime,
 			ReadTimeout:       readTimeout,
 			ReadHeaderTimeout: readHeaderTimeout,
 			WriteTimeout:      writeTimeout,
 			IdleTimeout:       ideaTimeout,
 		}
 	case struct {
-		Addr              string
-		Handler           http.Handler
+		Port      string
+		IP string
+		Address   string
+		ENV       *Env
+		StartTime time.Time
+		Handler *chi.Mux
 		ReadTimeout       time.Duration
 		ReadHeaderTimeout time.Duration
 		WriteTimeout      time.Duration
 		IdleTimeout       time.Duration
 	}:
-		return &http.Server{
-			Addr:              c.Addr,
-			Handler:           c.Handler,
+		return nil, &server{
+			Address: c.Address,
+			IP: c.IP,
+			Port:   c.Port,
+			ENV:      c.ENV,
+			StartTime: c.StartTime,
+			Handler: c.Handler,
 			ReadTimeout:       c.ReadTimeout,
 			ReadHeaderTimeout: c.ReadHeaderTimeout,
 			WriteTimeout:      c.WriteTimeout,
@@ -229,16 +262,14 @@ func NewServer(config interface{}) *http.Server {
 		}
 	case string:
 		log.Print("NO STRINGS!")
-		return nil
+		return errors.New("strings not supported"), nil
 		// make json string side
 	case []byte:
 		log.Print("NO BYTES!")
-		return nil
+		return errors.New("bytes not supported"),nil
 		// make json byte style
 	default:
-		log.Print("Need to implement json and reverse json")
 		log.Print("FAILING AS HARD AS WE CAN")
-		return nil
+		return errors.New("not supported"), nil
 	}
-	return nil
 }
