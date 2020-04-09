@@ -34,6 +34,8 @@ func Render(w http.ResponseWriter, r *http.Request, site int, view string, objec
 	path := withoutHTML(w, r)
 
 //	TODO: use true log package log
+	log.SetHeader("Server Error Logger")
+	log.SetPrefix("HOLDON")
 	log.Error(LoggerTemplateMap["ErrorJSON"])
 	if path == "/" {
 		handle.Error(render(w,r, Splash,"splash", object))

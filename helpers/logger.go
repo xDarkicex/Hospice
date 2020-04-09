@@ -5,6 +5,7 @@ import (
     "io"
     log2 "log"
 
+    "github.com/labstack/gommon/log"
     "github.com/valyala/fasttemplate"
 
     "github.com/xDarkicex/Hospice/terminal"
@@ -17,19 +18,19 @@ var LoggerTemplateMap = make(map[string]string)
 var (
      // Default *log2.Logger
      //
-    Default *log2.Logger
+    Default *log.Logger
     // Trace *log2.Logger
     //
-    Trace   *log2.Logger
+    Trace   *log.Logger
     // Info *log2.Logger
     //
-    Info    *log2.Logger
+    Info    *log.Logger
     // Warn *log2.Logger
-    Warn *log2.Logger
+    Warn *log.Logger
 /* ===================
         Error *log2.Logger
      */
-    Error   *log2.Logger
+    Error   *log.Logger
 )
 
 var Color terminal.Color
@@ -76,12 +77,12 @@ func GetTemplate(pre string) string {
     return LoggerTemplateMap[pre]
 }
 
-func defaultLogger(dh io.Writer) *log2.Logger {
+func defaultLogger(dh io.Writer) *log.Logger {
     prefixed := fasttemplate.ExecuteString(defaultPre, "{{","}}", map[string]interface{}{
         "level": Color.PinkLight("Default"),
     })
     defaultPRE := prefixed
-    return log2.New(dh, defaultPRE, log2.Ltime|log2.LstdFlags)
+    return log.New(dh, defaultPRE, log.Ltime|log.LstdFlags)
 }
 
 func errorLogger(eh io.Writer) *log2.Logger {

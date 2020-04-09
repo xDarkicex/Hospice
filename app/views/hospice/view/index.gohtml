@@ -28,7 +28,15 @@
                   </div>
 <!--                  k-section-secondary-->
                   <div class="uk-cover-container" style="height: 650px;">
-                    <video src="http://3.20.184.191/static/assets/hospice.webm" uk-video="automute: false; autoplay: true;" loop controls>
+                    <video uk-video="automute: false; autoplay: true;" loop controls>
+                        <source src="http://3.20.184.191/static/assets/hospice.webm"
+                                type="video/webm">
+
+                        <source src="http://3.20.184.191/static/assets/hospice-ad.mp4"
+                                type="video/mp4">
+
+                        Sorry, your browser doesn't support embedded videos.
+
                     </video>
 <!--                    controls playsinline hidden-->
                   </div>

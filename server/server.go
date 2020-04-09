@@ -57,7 +57,7 @@ func SiteByHeader(next http.Handler) http.Handler {
 		log.Print("text to append")
 		log.Print("more text to append")
 
-		log.Printf("incomming request %s %s %s %s", r.Method, r.RequestURI, r.RemoteAddr, id.String())
+		log.Printf("incoming request %s %s %s %s", r.Method, r.RequestURI, r.RemoteAddr, id.String())
 		log.Printf("%s\n", infoTemp.ExecuteString(map[string]interface{}{
 			terminal.Colors[25]("time"):       time.Now().Format(time.Stamp),
 			terminal.Colors[50]("referer"):    r.Referer(),
