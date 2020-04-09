@@ -1,10 +1,10 @@
 package helpers
 
 import (
-    "math/rand"
     "bytes"
     "crypto/aes"
     "crypto/cipher"
+    "crypto/rand"
     "encoding/binary"
     "flag"
     "fmt"
