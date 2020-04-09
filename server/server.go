@@ -47,12 +47,11 @@ func SiteByHeader(next http.Handler) http.Handler {
 
 		}
 		defer f.Close()
-		ctx = r.Context()
 		// ContextKey is used for context.Context value. The value requires a key that is not primitive type.
 		type ContextKey string
 		id := uuid.New()
 		var ContextKeyRequestID ContextKey = ContextKey(fmt.Sprintf("requestID-%s", id.String()))
-		ctx = context.WithValue(ctx, ContextKeyRequestID, id)
+		ctx := context.WithValue(r.Context(), ContextKeyRequestID, id)
 		infoTemp := fasttemplate.New(helpers.GetTemplate("visit_data_complete"), "{{", "}}")
 
 		log.Print("text to append")
