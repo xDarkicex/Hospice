@@ -428,53 +428,83 @@
           </div>
             <div class="uk-section-primary">
               <div class="uk-padding">
-              <form class="uk-grid-small" uk-grid action="/contact" method="POST">
-                <div class="uk-width-1-2">
-                  <lable class="uk-form-label">Full Name</lable>
-                  <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: user"></span>
-                    <input class="uk-input" type="text"  style="background-color: whitesmoke;
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);" placeholder="Full Name" name="contact_name">
+                <form class = "uk-grid-small" uk-grid action = "/contact" method = "POST" >
+                  <div class = "uk-width-1-2" >
+                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: user" ></span >
+                      <input class = "uk-input placeholder-black"
+                             type = "text"
+                             style = "background-color: rgba(255,255,255,0.3);
+                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);"
+                             placeholder = "Full Name"
+                             name = "contact_name" >
+                    </div >
+                  </div >
+                  <div class = "uk-width-1-2" >
 
-                  </div>
-                </div>
-                <div class="uk-width-1-2">
-                  <lable class="uk-form-label">Email</lable>
-                  <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: mail"></span>
-                    <input class="uk-input" type="text" style="background-color: whitesmoke;
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);" placeholder="E-Mail" name="contact_email">
+                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: mail" ></span >
+                      <input class = "uk-input placeholder-black"
+                             type = "text"
+                             style = "background-color: rgba(255,255,255,0.3);
+                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);"
+                             placeholder = "E-Mail"
+                             name = "contact_email" >
+                    </div >
+                  </div >
+                  <div class = "uk-width-1-2" >
+                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: hashtag" ></span >
+                      <input class = "uk-input placeholder-black"
+                             style = "background-color: rgba(255,255,255,0.3);
+                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);
+                           ::placeholder: black;"
+                             type = "phone"
+                             placeholder = "Phone"
+                             name = "contact_phone" >
+                    </div >
+                  </div >
+                  <div class = "uk-width-1-2" >
+                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: location" ></span >
+                      <input class = "uk-input placeholder-black"
+                             type = "text"
+                             style = "background-color: rgba(255,255,255,0.3);
+                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);"
+                             placeholder = "Address"
+                             name = "contact_address" >
+                    </div >
+                  </div >
+                  <div class = "uk-width-1-1" >
+                            <textarea class = "uk-textarea placeholder-black" placeholder = "Your Message" rows = "5" style = "resize:none; overflow-x:hidden;
+                            background-color: rgba(255,255,255,0.3);
+                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);" name = "contact_body" ></textarea >
+                  </div >
+                  <div class = "uk-width-1-3" >
+                    <div class = "g-recaptcha" data-sitekey = "6Ldyv7UUAAAAAC0uWC7PTIBdowvM2yhw4hmLI-Lv" ></div >
+                    <input class = "uk-button uk-button-primary placeholder-black" type = "submit" >
+                  </div >
+                </form >
+                <style>
+                  .placeholder-black::-webkit-input-placeholder {
+                    color: rgba(0,0,0,0.6)!important;
+                  }
+                </style>
+                <script type="text/javascript">
 
-                  </div>
-                </div>
-                <div class="uk-width-1-2">
-                  <lable class="uk-form-label">Contact Number</lable>
-                  <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: hashtag"></span>
-                    <input class="uk-input" style="background-color: whitesmoke;
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);" type="phone" placeholder="Phone" name="contact_phone">
+                  document.addEventListener('DOMContentLoaded', (event) => {
+                    const color = "rgba(0,0,0,0.6)"
 
-                  </div>
-                </div>
-                <div class="uk-width-1-2">
-                  <lable class="uk-form-label">Address</lable>
-                  <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: location"></span>
-                    <input class="uk-input" type="text"  style="background-color: whitesmoke;
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);" placeholder="Address" name="contact_address">
-                  </div>
-                </div>
-                <lable class="uk-form-label">Please include a short description, so we can better assist you.</lable>
-                <div class="uk-width-1-1">
-                    <textarea class="uk-textarea" placeholder="Your Message" rows="5" style="resize:none; overflow-x:hidden;
-                            background-color: whitesmoke;
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);" name="contact_body"></textarea>
-                </div>
-                <div class="uk-width-1-3">
-                  <div class="uk-padding-small uk-padding-remove-horizontal">
-                    <div class="g-recaptcha" data-sitekey="6Ldyv7UUAAAAAC0uWC7PTIBdowvM2yhw4hmLI-Lv"></div>
+                    let form = document.querySelector('form')
 
-                  </div>
-                  <input class="uk-button uk-button-primary" type="submit">
-                </div>
+                     let span = form.childNodes[1].childNodes[1].childNodes[0]
+                     span.style.color = color;
+                     span = form.childNodes[3].childNodes[1].childNodes[0]
+                     span.style.color = color;
+                     span = form.childNodes[5].childNodes[1].childNodes[0]
+                     span.style.color = color;
+                     span = form.childNodes[7].childNodes[1].childNodes[0]
+                     span.style.color = color;
 
-              </form>
+            });
+
+        </script>
                 <div class="uk-padding-small uk-padding-remove-horizontal uk-text-meta">We will never give out any of your personal information.</div>
             </div>
           </div>
