@@ -1,0 +1,16 @@
+
+form > div > span {
+    color: black;
+}
+
+
+form > div > div > input::placeholder {
+    color: rgba(0,0,0,0.3);
+}
+form > div > div > .uk-form-icon .icon {
+    color: rgba(0, 0, 0, 0.42)!important;
+}
+
+::placeholder {
+    color: rgba(0,0,0,0.3);
+}

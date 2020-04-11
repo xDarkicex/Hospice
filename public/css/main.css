@@ -11,12 +11,12 @@
 /* line 91, node_modules/uikit/src/scss/components/base.scss */
 
 body {
-  font-family: 'Source Sans Pro';
+  font-family: "Century Gothic Pro", century-gothic, "Noto Sans";
   font-weight: 400;
   font-style: normal;
 }
 body h1, h2, h3 {
-  font-family: 'Source Sans Pro';
+  font-family: "Century Gothic Pro", century-gothic, "Noto Sans";
   font-weight: 700;
   font-style: normal;
 }
