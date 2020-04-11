@@ -51,7 +51,7 @@ func SiteByHeader(next http.Handler) http.Handler {
 		type ContextKey string
 		id := uuid.New()
 		var ContextKeyRequestID ContextKey = ContextKey(fmt.Sprintf("requestID-%s", id.String()))
-		ctx := context.WithValue(r.Context(), ContextKeyRequestID, id)
+		ctx = context.WithValue(r.Context(), ContextKeyRequestID, id)
 		infoTemp := fasttemplate.New(helpers.GetTemplate("visit_data_complete"), "{{", "}}")
 
 		log.Print("text to append")

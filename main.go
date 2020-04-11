@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/go-chi/chi/v4"
 	"github.com/joho/godotenv"
-	_ "github.com/labstack/gommon/log"
+	_ "go.uber.org/zap"
 	"golang.org/x/net/context"
 	"log"
 	"net/http"

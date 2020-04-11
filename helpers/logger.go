@@ -3,10 +3,10 @@ package helpers
 import (
     "encoding/json"
     "io"
-    log2 "log"
 
-    "github.com/labstack/gommon/log"
+
     "github.com/valyala/fasttemplate"
+    log "go.uber.org/zap"
 
     "github.com/xDarkicex/Hospice/terminal"
 )
@@ -65,7 +65,7 @@ func Init(defaultHandle io.Writer, infoHandle io.Writer, warnHandle io.Writer, e
     // ErrorJSON is fast template json for error logging
     ErrorJSON, err := json.Marshal(rawerrorTemplate)
     l["ErrorJSON"] = string(ErrorJSON)
-    Error.Print(err)
+    log.Error(err)
     Default = defaultLogger(defaultHandle)
     Error = errorLogger(errorHandle)
     Trace = traceLogger(traceHandle)
@@ -78,43 +78,56 @@ func GetTemplate(pre string) string {
 }
 
 func defaultLogger(dh io.Writer) *log.Logger {
-    prefixed := fasttemplate.ExecuteString(defaultPre, "{{","}}", map[string]interface{}{
+    // TODO: rewrite the fast templae into a func that takes an error and wraps it in a fasttemplate and returns a string for the logger to use.
+     _ = fasttemplate.ExecuteString(defaultPre, "{{","}}", map[string]interface{}{
         "level": Color.PinkLight("Default"),
     })
-    defaultPRE := prefixed
-    return log.New(dh, defaultPRE, log.Ltime|log.LstdFlags)
+    logger, err := log.NewDevelopment()
+    if err != nil {
+        log.Error(err)
+    }
+    return logger
 }
 
-func errorLogger(eh io.Writer) *log2.Logger {
-    prefixed := fasttemplate.ExecuteString(errorPre, "{{","}}", map[string]interface{}{
+func errorLogger(eh io.Writer) *log.Logger {
+    _ = fasttemplate.ExecuteString(errorPre, "{{","}}", map[string]interface{}{
         "level":  Color.Red("Error"),
     })
-    coloredPRE := prefixed
-    return log2.New(eh, coloredPRE, log2.Ldate|log2.Ltime|log2.Lshortfile)
+    logger, err := log.NewDevelopment()
+    if err != nil {
+        log.Error(err)
+    }
+    return logger
 }
-func traceLogger(th io.Writer) *log2.Logger {
-    prefixed := fasttemplate.ExecuteString(tracePre, "{{","}}", map[string]interface{}{
+func traceLogger(th io.Writer) *log.Logger {
+    _ = fasttemplate.ExecuteString(tracePre, "{{","}}", map[string]interface{}{
         "level": Color.Blue("Trace"),
     })
-    coloredPRE := prefixed
-    return log2.New(th, coloredPRE, log2.Ldate|log2.Ltime|log2.Lshortfile)
+    logger, err := log.NewDevelopment()
+    if err != nil {
+        log.Error(err)
+    }
+    return logger
 }
 
-func infoLogger(ih io.Writer) *log2.Logger {
-    prefixed := fasttemplate.ExecuteString(infoPre, "{{","}}", map[string]interface{}{
+func infoLogger(ih io.Writer) *log.Logger {
+    _ = fasttemplate.ExecuteString(infoPre, "{{","}}", map[string]interface{}{
         "level": Color.GreenLight("Info"),
     })
-    coloredPRE := prefixed
-    return log2.New(ih, coloredPRE, log2.Ldate|log2.Ltime|log2.Lshortfile)
+    logger, err := log.NewDevelopment()
+    if err != nil {
+        log.Error(err)
+    }
+    return logger
 }
 
-func warnLogger(wh io.Writer) *log2.Logger {
-    prefixed := fasttemplate.ExecuteString(warnPre, "{{","}}", map[string]interface{}{
+func warnLogger(wh io.Writer) *log.Logger {
+    _ = fasttemplate.ExecuteString(warnPre, "{{","}}", map[string]interface{}{
         "level": Color.Orange("Warning"),
     })
-    return log2.New(wh, prefixed, log2.Ldate|log2.Ltime|log2.Lshortfile)
-}
-
-func inti() {
-
+    logger, err := log.NewDevelopment()
+    if err != nil {
+        log.Error(err)
+    }
+    return logger
 }

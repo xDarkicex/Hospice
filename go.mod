@@ -12,6 +12,7 @@ require (
 	github.com/mitchellh/gox v1.0.1 // indirect
 	github.com/scorredoira/email v0.0.0-20191107070024-dc7b732c55da
 	github.com/valyala/fasttemplate v1.1.0
-	golang.org/x/net v0.0.0-20190108155000-395948e2f546
+	go.uber.org/zap v1.14.1
+	golang.org/x/net v0.0.0-20190620200207-3b0461eec859
 	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543
 )
