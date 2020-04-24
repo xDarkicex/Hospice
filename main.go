@@ -1,18 +1,15 @@
 package main
 
 import (
-	"context"
 	"fmt"
-	"github.com/go-chi/chi/v4"
-	"github.com/joho/godotenv"
-	_ "go.uber.org/zap"
 	"log"
-	"net/http"
 	"os"
 	"runtime"
 	"strconv"
 	"time"
 
+	"github.com/go-chi/chi/v4"
+	"github.com/joho/godotenv"
 	"github.com/xDarkicex/Hospice/helpers"
 	"github.com/xDarkicex/Hospice/server"
 	"github.com/xDarkicex/Hospice/terminal"
@@ -47,24 +44,31 @@ func init() {
 	GOOGLE_KEY = myEnv["GOOGLE_KEY"]
 	ADDRESS = myEnv["ADDRESS"]
 	IP = myEnv["IP"]
-	DEVELOPMENT = myEnv["DEVELOPMENT"]
-	PRODUCTION = myEnv["PRODUCTION"]
+
 	PORT = myEnv["PORT"]
 	fmt.Println(myEnv)
+
+}
+
+// SSL checks env variables
+func SSL(myEnv map[string]string) (production, development bool) {
+	DEVELOPMENT = myEnv["DEVELOPMENT"]
+	PRODUCTION = myEnv["PRODUCTION"]
 	production, err := strconv.ParseBool(PRODUCTION)
 	if err != nil {
 		log.Print(err, production)
 	}
-	development, err := strconv.ParseBool(DEVELOPMENT)
+	development, err = strconv.ParseBool(DEVELOPMENT)
 	if err != nil {
 		log.Print(err, development)
 	}
+	return production, development
 }
 
 // Port is env port system Port
 func main() {
-
-	s := server.NewRouter()
+	served := server.NewRouter()
+	production, development := SSL(myEnv)
 	var config = struct {
 		Port              string
 		IP                string
@@ -84,7 +88,7 @@ func main() {
 		Port:              PORT,
 		IP:                IP,
 		Address:           ADDRESS,
-		Handler:           s,
+		Handler:           served,
 		StartTime:         time.Now(),
 		ReadTimeout:       15 * time.Second,
 		ReadHeaderTimeout: 15 * time.Second,
@@ -95,13 +99,13 @@ func main() {
 	fmt.Println(fmt.Sprintf(helpers.Color.Coral("Server Architecture detected")+"=%s\n"+helpers.Color.Coral("Server CPU Count")+"=%s\n", helpers.Color.Blue(string(runtime.GOARCH)), helpers.Color.Blue(strconv.FormatInt(int64(runtime.NumCPU()), 10))))
 
 	fmt.Println("[" + terminal.Colors[218]("200") + "]" + terminal.Colors[212]("Now Listening ") + helpers.Color.PinkBold("ON ") + helpers.Color.Blue(ADDRESS))
-	err, srv := server.NewServer(config)
-	if err != nil {
-		log.Fatalln(err)
+
+	if config.ENV.Production {
+		fmt.Println("...")
 	}
-	mux := srv.Handler
-	c := context.Background()
-	log.Fatalln(http.ListenAndServe(srv.Address, chi.ServerBaseContext(c, mux)))
-	fmt.Println(c)
+	// err = http.ListenAndServe(srv.Address, chi.ServerBaseContext(c, mux))
+	// if err != nil {
+	// 	fmt.Println(c)
+	// }
 
 }
