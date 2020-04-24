@@ -1,42 +1,41 @@
 {{define "content"}}
-
-      <div class="uk-section-primary uk-preserve-color uk-align-middle"">
-         <div class="uk-padding"></div>
-          <div class="uk-padding" id="resources">
+      <style>
+        .reset{
+          margin: 0; padding: 0;
+          max-width: 40rem;
+        }
+      </style>
+      <div class="uk-section-alt uk-preserve-color uk-align-middle"">
+          <div class="uk-padding">
             <h1 class="uk-heading-line uk-text-center">
-                        <span>
-                          SEVICES
-                        </span>
+                <span>
+                  Services We Provide
+                </span>
             </h1>
           </div>
-
-        <div class="uk-grid-match uk-child-width-1-1@s uk-child-width-1-2@m uk-padding" uk-scrollspy="target: > div; cls: uk-animation-scale-up; " uk-grid>
-          <div style="line-height: 2.5rem">
+        <div class="uk-grid-match uk-child-width-1-1@s uk-child-width-1-2@m uk-padding" uk-grid>
+          <div>
             <div class="uk-card uk-card-default">
               <div class="uk-media-top" >
                 <img src='/static/assets/services-1.jpg' class="uk-height-custom" alt="">
               </div>
               <div class="uk-card-body">
                 <div class="uk-margin-top">
-                  <h2 style="text-align: center;">{{print "What Is Hospice?"}}</h2>
+                  <h1 style="text-align: left;">{{print "What Is Hospice:"}}</h1>
+                  <br />
                 </div>
+
                 <div class="uk-panel">
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.7/js/uikit.min.js"></script>
-                  <script>
-                    var IMG_HEADER = document.querySelector('header-image')
-                    console.log("loaded")
-                    UIkit.img(IMG_HEADER);
-                  </script>
                   <ul class="uk-list">
                     <li>
-                      <p class="uk-text-justify" style="line-height: 2.5rem">
+                      <p class="uk-text-justify">
                         Hospice is a philosophy of curated care and service for people with
                         a terminal illness along with providing a support system to their loved ones.
                         Hospice is about providing the best quality of life during the final stage of life.
                       </p>
                     </li>
                     <li>
-                      <p class="uk-text-justify" style="line-height: 2.5rem">
+                      <p class="uk-text-justify">
                         Compassionate Care Hospice not only provides skilled pain management for the patient, but also emotional support,
                         spiritual services, and grief support for family members following the death of a loved one.  Hospice cares for the person,
                         not the disease, while supporting life and focusing on compassion, comfort, dignity and quality of life during the remaining months, weeks,
@@ -44,7 +43,7 @@
                       </p>
                     </li>
                     <li>
-                      <p class="uk-text-justify" style="line-height: 2.5rem">
+                      <p class="uk-text-justify">
                         Compassionate Care Hospice provides a dedicated team of professionals from a vast array of disciplines to your
                         home: doctors, nurses, spiritual counselors, social workers and volunteers.  Our experienced team specializes in assisting
                         the patient and family through the transition from designed care to comfort care.
@@ -57,131 +56,212 @@
               </div>
             </div>
           </div>
-          <div style="line-height: 2.5rem">
+          <div>
             <div class="uk-card uk-card-default">
               <div class="uk-media-top" >
-                <img src='/static/assets/services-2.jpg' class="uk-height-custom alt="">
+                <img src='/static/assets/services-2.jpg' class="uk-height-custom" alt="">
               </div>
               <div class="uk-card-body">
                 <div class="uk-margin-top">
-                  <h2 style="text-align: center;">{{print "Hospice Facts:"}}</h2>
+                  <h1 style="text-align: left;">{{print "Hospice Facts:"}}</h1>
+                  <br />
                 </div>
                 <div class="uk-panel">
 
-                  <ul class="uk-list uk-list-divider">
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is the providing of care for a person who is terminally ill.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is not a physical location, like a hospital or nursing home.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice focuses on quality of life; it is most beneficial during the final six months of life expectancy.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is not a “death bed” service for people in the last 48 hours of life.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice gives the right of truth to everyone involved so they know accurately and truthfully
-                        what is happening to them so they may navigate how they wish to spend the remaining time in the most meaningful ways.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is the providing of care for a person who is terminally ill.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is not a place to send dying people to keep them ignorant of exactly what is happening to them.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is for people who have any and all terminal illnesses.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is not just for cancer patients.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is a realistic way to deal with a fatal diagnosis.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice offers hope, dignity and comfort.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is not giving up on hope or help.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is a family-oriented program that helps families and/or friends care for their loved one in the sanctuary of their own homes.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is not a substitute for the family or the family’s care, but rather a much needed addition.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is covered by Medicare, Medicaid and several other insurance providers. We never deny care, even for patients are unable to pay.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is not expensive.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice neither hastens nor prolongs death.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice lets nature run its course.
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
-                        Hospice is not euthanasia.
-                      </p>
-                    </li>
-                  </ul>
+{{/*                  <ul class="uk-list">*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify">*/}}
+{{/*                        Hospice is the providing of care for a person who is terminally ill.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify">*/}}
+{{/*                        Hospice is not a physical location, like a hospital or nursing home.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice focuses on quality of life; it is most beneficial during the final six months of life expectancy.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is not a “death bed” service for people in the last 48 hours of life.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice gives the right of truth to everyone involved so they know accurately and truthfully*/}}
+{{/*                        what is happening to them so they may navigate how they wish to spend the remaining time in the most meaningful ways.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is the providing of care for a person who is terminally ill.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is not a place to send dying people to keep them ignorant of exactly what is happening to them.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is for people who have any and all terminal illnesses.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is not just for cancer patients.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is a realistic way to deal with a fatal diagnosis.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice offers hope, dignity and comfort.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is not giving up on hope or help.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is a family-oriented program that helps families and/or friends care for their loved one in the sanctuary of their own homes.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is not a substitute for the family or the family’s care, but rather a much needed addition.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is covered by Medicare, Medicaid and several other insurance providers. We never deny care, even for patients are unable to pay.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is not expensive.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice neither hastens nor prolongs death.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice lets nature run its course.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                    <li>*/}}
+{{/*                      <p class="uk-text-justify"*/}}
+{{/*                      >*/}}
+{{/*                        Hospice is not euthanasia.*/}}
+{{/*                      </p>*/}}
+{{/*                    </li>*/}}
+{{/*                  </ul>*/}}
+                  <p class="reset">
+                    Hospice is the providing of care for a person who is terminally ill.
+                  </p>
+                  <p class="reset">
+                    Hospice is not a physical location, like a hospital or nursing home.
+                  </p>
+                  <p class="reset">
+                    Hospice focuses on quality of life; it is most beneficial during the final six months of life expectancy.
+                  </p>
+                  <p class="reset">
+                    Hospice is not a “death bed” service for people in the last 48 hours of life.
+                  </p>
+                  <p class="reset">
+                    Hospice gives the right of truth to everyone involved so they know accurately and truthfully what is happening to them so they may navigate how they wish to spend the remaining time in the most meaningful ways.
+                  </p>
+                  <p class="reset">
+                    Hospice is the providing of care for a person who is terminally ill.
+                  </p>
+                  <p class="reset">
+                    Hospice is not a place to send dying people to keep them ignorant of exactly what is happening to them.
+                  </p>
+                  <p class="reset">
+                    Hospice is for people who have any and all terminal illnesses.
+                  </p>
+                  <p class="reset">
+                    Hospice is not just for cancer patients.
+                  </p>
+                  <p class="reset">
+                    Hospice is a realistic way to deal with a fatal diagnosis.
+                  </p>
+                  <p class="reset">
+                    Hospice offers hope, dignity and comfort.
+                  </p>
+                  <p class="reset">
+                    Hospice is not giving up on hope or help.
+                  </p>
+                  <p class="reset">
+                    Hospice is a family-oriented program that helps families and/or friends care for their loved one in the sanctuary of their own homes.
+                  </p>
+                  <p class="reset">
+                    Hospice is not a substitute for the family or the family’s care, but rather a much needed addition.
+                  </p>
+                  <p class="reset">
+                    Hospice is covered by Medicare, Medicaid and several other insurance providers. We never deny care, even for patients are unable to pay.
+                  </p>
+                  <p class="reset">
+                    Hospice is not expensive.
+                  </p>
+                  <p class="reset">
+                    Hospice neither hastens nor prolongs death.
+                  </p>
+                  <p class="reset">
+                    Hospice lets nature run its course.
+                  </p>
+                  <p class="reset">
+                    Hospice is not euthanasia.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <div style="line-height: 2.5rem">
+          <div
+          >
             <div class="uk-card uk-card-default">
               <div class="uk-media-top" >
                 <img src='/static/assets/services-3.jpg' alt="">
               </div>
               <div class="uk-card-body">
                 <div class="uk-margin-top">
-                  <h2 style="text-align: center;">{{print "When to Consider Hospice?"}}</h2>
+                  <h1 style="text-align: left;">{{print "When to Consider Hospice:"}}</h1>
                   <br />
+                  <br />
+                  <br />
+                  <br>
+                <br />
                 </div>
                 <div class="uk-panel">
-                  <p class="uk-text-justify" style="line-height: 2.5rem">
+                  <p class="uk-text-justify"
+                  >
                     For many of us, end-of-life discussions with family members are very difficult, and in most cases, nonexistent. Although challenging,
                     it is best for families to share their wishes before the terminal state becomes an immediate reality. In many situations, patients with terminal
                     illnesses may lose their ability to communicate with their near and dear, forcing family members to make uncomfortable decisions independently during
@@ -194,73 +274,61 @@
               </div>
             </div>
           </div>
-          <div style="line-height: 2.5rem">
+          <div
+          >
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
                 <img src='/static/assets/services-4.jpg' alt="">
               </div>
               <div class="uk-card-body">
                 <div class="uk-margin-top">
-                  <h2 style="text-align: left;">{{print "Are You or a Loved One Facing a Life-Limiting Disease or Illness, Such As:"}}</h2>
+                  <h1 style="text-align: left;">{{print "Are You or a Loved One Facing a Life-Limiting Disease or Illness, Such As:"}}</h1>
+                  <br />
                 </div>
                 <div class="uk-panel">
-                  <ul class="uk-list uk-list-divider">
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
+
+                  <p class="reset">
                         Cancer
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify">
+                  </p>
+                  <p class="reset">
                         Heart Disease
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify">
+                  </p>
+                  <p class="reset">
                         Alzheimer’s/Dementia
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify">
+                  </p>
+                  <p class="reset">
                         Respiratory Diseases
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify">
+                  </p>
+                  <p class="reset">
                         Neurologic Diseases
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify">
+                  </p>
+                  <p class="reset">
                         Liver/Renal Failure
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify">
+                  </p>
+                  <p class="reset">
                         Stroke or Coma
-                      </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify">
+                  </p>
+                  <p class="reset">
                         AIDS/HIV
-                      </p>
-                    </li>
-                  </ul>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <div style="line-height: 2.5rem">
+          <div
+          >
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
                 <img src='/static/assets/services-5.jpg' alt="">
               </div>
               <div class=" uk-card-body">
                 <div class="uk-margin-top">
-                    <h2 style="text-align: center;">{{print "What are the Patient’s Goals and Wishes?"}}</h2>
+                    <h1 style="text-align: left;">{{print "What are the Patient’s Goals and Wishes:"}}</h1>
+                  <br />
                 </div>
                 <div class="uk-panel">
-                  <p class="uk-text-justify" style="line-height: 2.5rem">
+                  <p class="uk-text-justify"
+                  >
                     Compassionate Care Hospice listens to our patients and designs a care plan based on their preferences for end-of-life treatment.
                     This process known as Advance Care Planning (ACP) ensures the patient’s wishes are known and honored should they reach a point in their progression that prevents communication.
                     Our team will then assemble a personalized care plan that includes certain procedures or interventions that should, or should not be pursued, and honors the patient’s wishes while
@@ -271,17 +339,22 @@
               </div>
             </div>
           </div>
-          <div style="line-height: 2.5rem">
+          <div
+          >
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
                 <img src='/static/assets/services-12.jpg' alt="">
               </div>
               <div class="uk-card-body">
                 <div class="uk-margin-top">
-                  <h2 style="text-align: center;">{{print "Understanding the Practice"}}</h2>
+                  <h1 style="text-align: left;">{{print "Understanding the Practice:"}}</h1>
+                  <br />
+                  <br />
+                  <br>
                 </div>
                 <div class="uk-panel">
-                  <p class="uk-text-justify" style="line-height: 2.5rem">
+                  <p class="uk-text-justify"
+                  >
                     Recognizing the rights of terminally ill patients and their families is fundamental. We know that it is extremely important to keep our patients
                     and their family members informed of their clinical prognosis and updates in condition.
                     An informed patient and family can more easily work through the decision-making process that determines how their end-of-life care is provided.
@@ -290,59 +363,45 @@
               </div>
             </div>
           </div>
-          <div style="line-height: 2.5rem">
+          <div
+          >
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
                 <img src='/static/assets/services-7.jpg' alt="">
               </div>
               <div class="uk-card-body">
                 <div class="uk-margin-top">
-                  <h2 style="text-align: center;">{{print "Is the Patient Showing Signs of Decline and Losing Quality of Life?"}}</h2>
+                  <h1 style="text-align: left;">{{print "Is the Patient Showing Signs of Decline and Losing Quality of Life?"}}</h1>
                   <h3 style="text-align: left;">{{print "Factors to Consider if it’s Time for Hospice:"}}</h3>
+                  <br />
                 </div>
                 <div class="uk-panel">
-                  <ul class="uk-list">
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
+                      <p class="uk-text-justify reset">
                         Has a doctor certified the patient has six months or less to live?
                       </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" style="line-height: 1.5rem">
+                      <p class="uk-text-justify reset">
                         Are curative treatments no longer effective or  are they creating side effects, undue suffering or discomfort?
                       </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" >
+                      <p class="uk-text-justify reset">
                         Does the patient no longer wish to be hospitalized?
                       </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" >
+                      <p class="uk-text-justify reset">
                         Is the patient losing the ability to perform the activities of daily living (eating, dressing, personal hygiene, maintaining continence, transferring)?
                       </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" >
+                      <p class="uk-text-justify reset">
                         Has the patient had multiple hospitalizations or emergency room visits?
                       </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify" >
+                      <p class="uk-text-justify reset">
                         Has the patient lost 10% or more of body weight?
                       </p>
-                    </li>
-                    <li>
-                      <p class="uk-text-justify">
+                      <p class="uk-text-justify reset">
                         Is the patients physical activity or mental alertness declining?
                       </p>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
           </div>
-          <div style="line-height: 2.5rem">
+          <div>
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
 {{/*                <img src='/static/assets/services-8.jpg' alt="">*/}}
@@ -350,16 +409,17 @@
               </div>
               <div class="uk-card-body">
                 <div class="uk-margin-top">
-                  <h2 style="text-align: center;">{{print "Patients Live Longer and More Comfortable with Hospice"}}</h2>
+                  <h1 style="text-align: left;">{{print "Patients Live Longer and More Comfortable with Hospice:"}}</h1>
                   <h3 style=color:white;">PLACEHOLDER</h3>
+                  <br />
                 </div>
 
                 <div class="uk-panel">
-                  <p class="uk-text-justify" style="line-height: 2.5rem">
+                  <p class="uk-text-justify">
                     In March 2007 National Hospice and Palliative Care Organization conducted a study looking at 4,493 Medicare beneficiaries with some of the most common diagnoses leading to death.
                     Patients who received hospice services lived on average, 29 days longer than those who did not receive hospice care and lived a better quality of life.
                   </p>
-                  <p class="uk-text-justify" style="line-height: 2.5rem">
+                  <p class="uk-text-justify">
                     There is no time limit for a patient to receive hospice benefits. Hospice is for patients who are expected to live six months or less,
                     but can be extended if the patient continues to meet the criteria. If our team determines that a patient’s prognosis is extended, we will discharge
                     the patient from our service and carefully transition the patient with an appropriate plan in place.
@@ -368,27 +428,26 @@
               </div>
             </div>
           </div>
-          <div style="line-height: 2.5rem">
+          <div>
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
                 <img src='/static/assets/services-9.jpg' alt="">
               </div>
               <div class=" uk-card-body">
                 <div class="uk-margin-top">
-                  <h2 style="text-align: center;">{{print "Bereavement Care – Emotional Support"}}</h2>
-
+                  <h1 style="text-align: left;">{{print "Bereavement Care – Emotional Support:"}}</h1>
                 </div>
                 <div class="uk-panel">
-                  <p class="uk-text-justify" style="line-height: 2.5rem">
+                  <p class="uk-text-justify">
                     Upon our initial visit, we will identify people in need of bereavement support prior to and following the death of the dearly departed.
                     Our bereavement program offers support and counseling to the patient, the family, loved ones and any care staff, for a minimum of thirteen months
                     following a patient’s passing.
                   </p>
-                  <p class="uk-text-justify" style="line-height: 2.5rem">
+                  <p class="uk-text-justify">
                     Our goal is to empower families and loved ones to recognize and develop skills to manage grief, while learning to adjust to the passing of a loved one.
                     Our program aims to prevent the onset of grief related physical and mental health issues.
                   </p>
-                  <p class="uk-text-justify" style="line-height: 2.5rem">
+                  <p class="uk-text-justify">
                     We revere the human experience, we offer support services for the family after the loved one has departed.
                     We are reachable every hour of every day. A dedicated hospice care nurse is always available by phone with the ability to expedite further medical treatment.
                     Our multi-disciplinary staff is ready to respond whenever needed for a medical or emotional emergency.
@@ -397,17 +456,17 @@
               </div>
             </div>
           </div>
-          <div style="line-height: 2.5rem">
+          <div>
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
                 <img src='/static/assets/services-10.jpg' alt="">
               </div>
-              <div class=" uk-card-body">
+              <div class="uk-card-body">
                 <div class="uk-margin-top">
-                  <h2 style="text-align: left;">{{print "Respite Care:"}}</h2>
+                  <h1 style="text-align: left;">{{print "Respite Care:"}}</h1>
                 </div>
                 <div class="uk-panel">
-                  <p class="uk-text-justify" style="line-height: 2.5rem">
+                  <p class="uk-text-justify">
                     Caregivers and family members often experience stress and become overwhelmed in caring for their loved one,
                     so we offer an opportunity for them to take a break and recharge during an up to five-day relief period known as Respite.
                     During this managed short-term stay, the patient will be admitted to a fully accredited inpatient facility
@@ -418,99 +477,57 @@
               </div>
             </div>
           </div>
+
         </div>
-      </div>
-      <div class="uk-section-secondary uk-section uk-flex">
-
-        <div class="uk-container">
-          <div class="uk-comment-header uk-text-center">
-            <p class=""uk-h2 uk-font-bold uk-font-uppercase">Contact Us Today</p>
-          </div>
-            <div class="uk-section-primary">
-              <div class="uk-padding">
-                <form class = "uk-grid-small" uk-grid action = "/contact" method = "POST" >
-                  <div class = "uk-width-1-2" >
-                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: user" ></span >
-                      <input class = "uk-input placeholder-black"
-                             type = "text"
-                             style = "background-color: rgba(255,255,255,0.3);
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);"
-                             placeholder = "Full Name"
-                             name = "contact_name" >
-                    </div >
-                  </div >
-                  <div class = "uk-width-1-2" >
-
-                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: mail" ></span >
-                      <input class = "uk-input placeholder-black"
-                             type = "text"
-                             style = "background-color: rgba(255,255,255,0.3);
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);"
-                             placeholder = "E-Mail"
-                             name = "contact_email" >
-                    </div >
-                  </div >
-                  <div class = "uk-width-1-2" >
-                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: hashtag" ></span >
-                      <input class = "uk-input placeholder-black"
-                             style = "background-color: rgba(255,255,255,0.3);
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);
-                           ::placeholder: black;"
-                             type = "phone"
-                             placeholder = "Phone"
-                             name = "contact_phone" >
-                    </div >
-                  </div >
-                  <div class = "uk-width-1-2" >
-                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: location" ></span >
-                      <input class = "uk-input placeholder-black"
-                             type = "text"
-                             style = "background-color: rgba(255,255,255,0.3);
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);"
-                             placeholder = "Address"
-                             name = "contact_address" >
-                    </div >
-                  </div >
-                  <div class = "uk-width-1-1" >
-                            <textarea class = "uk-textarea placeholder-black" placeholder = "Your Message" rows = "5" style = "resize:none; overflow-x:hidden;
-                            background-color: rgba(255,255,255,0.3);
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);" name = "contact_body" ></textarea >
-                  </div >
-                  <div class = "uk-width-1-3" >
-                    <div class = "g-recaptcha" data-sitekey = "6Ldyv7UUAAAAAC0uWC7PTIBdowvM2yhw4hmLI-Lv" ></div >
-                    <input class = "uk-button uk-button-primary placeholder-black" type = "submit" >
-                  </div >
-                </form >
-                <style>
-                  .placeholder-black::-webkit-input-placeholder {
-                    color: rgba(0,0,0,0.6)!important;
-                  }
-                </style>
-                <script type="text/javascript">
-
-                  document.addEventListener('DOMContentLoaded', (event) => {
-                    const color = "rgba(0,0,0,0.6)"
-
-                    let form = document.querySelector('form')
-
-                     let span = form.childNodes[1].childNodes[1].childNodes[0]
-                     span.style.color = color;
-                     span = form.childNodes[3].childNodes[1].childNodes[0]
-                     span.style.color = color;
-                     span = form.childNodes[5].childNodes[1].childNodes[0]
-                     span.style.color = color;
-                     span = form.childNodes[7].childNodes[1].childNodes[0]
-                     span.style.color = color;
-
-            });
-
-        </script>
-                <div class="uk-padding-small uk-padding-remove-horizontal uk-text-meta">We will never give out any of your personal information.</div>
+      <div class="uk-container uk-padding">
+        <div class="uk-grid-collapse uk-grid-match uk-child-width-1-1" uk-grid>
+          <div class="uk-width-1-1@s uk-width-1-1@m uk-background-primary">
+            <div class="uk-padding uk-background-default">
+              <div class="uk-flex uk-flex-center"><img src="/static/assets/cchha.svg" alt="Compassionate Care Home Health Agency Logo"></div>
+            </div>
+            <div class="uk-padding">
+              <h4 class="uk-heading-line uk-text-center" style="color:white;"><span>If you'd like to apply with us, please fill out the form below</span></h4>
+              <p class="uk-text-center" style="color:white;">Please attatch your resume as a pdf file.</p>
+              <div class="uk-flex-center uk-flex">
+                <form class="uk-grid-small" uk-grid action="/contact-careers" enctype="multipart/form-data" method="POST">
+                  <div class="uk-width-1-2">
+                    <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: user"></span>
+                      <input class="uk-input" type="text" placeholder="Full Name" name="contact_name">
+                    </div>
+                  </div>
+                  <div class="uk-width-1-2">
+                    <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: mail"></span>
+                      <input class="uk-input" type="text" placeholder="E-Mail" name="contact_email">
+                    </div>
+                  </div>
+                  <div class="uk-width-1-2">
+                    <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: hashtag"></span>
+                      <input class="uk-input" type="phone" placeholder="Phone" name="contact_phone">
+                    </div>
+                  </div>
+                  <div class="uk-width-1-2">
+                    <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: location"></span>
+                      <input class="uk-input" type="text" placeholder="Address" name="contact_address">
+                    </div>
+                  </div>
+                  <div class="uk-width-1-1">
+                    <textarea class="uk-textarea" placeholder="Your Message" rows="5" style="resize:none; overflow-x:hidden;" name="contact_body"></textarea>
+                  </div>
+                  <div class="uk-width-1-1">
+                    <div uk-form-custom="target: true">
+                      <input type="file" name="file_upload" accept="application/pdf">
+                      <input class="uk-input uk-form-width-medium" type="text" placeholder="Attach Resume PDF" disabled>
+                    </div>
+                  </div>
+                  <div class="uk-width-1-3">
+                    <div class="g-recaptcha" data-sitekey="6Ldyv7UUAAAAAC0uWC7PTIBdowvM2yhw4hmLI-Lv"></div>
+                    <input class="uk-input" type="submit">
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <script src="https://www.google.com/recaptcha/api.js"></script>
 {{end}}
-  </body>
-</html>

@@ -1,145 +1,92 @@
 {{define "content"}}
-          <div>
-            <div class="uk-section-primary uk-preserve-color uk-align-middle" >
-              <div class="uk-grid-match uk-child-width-1-1@s uk-padding" uk-scrollspy="target: > div; cls: uk-animation-scale-up; " uk-grid>
-                <div>
 
-                  <div class="uk-container">
+    <div class="uk-section-default uk-preserve-color uk-align-middle uk-margin-remove-bottom">
+        <div class="uk-container">
                     <div class="uk-padding">
-                      <h1 class="uk-heading-line uk-text-center">
+                        <h1 class="uk-heading-line uk-text-center">
                         <span>
-                          CAREERS
+                          Career Opportunities
                         </span>
-                      </h1>
+                        </h1>
+                        <h4 class="uk-text-center">
+                            Thank you for your interest in joining our mission of providing comfort and compassion to our patients and their families...
+                        </h4>
                     </div>
-                  </div>
-                  <div class="uk-card uk-card-default uk-card-body">
-                  <div class="uk-padding">
-                    <h2 class="uk-text-center">
-                      Thank you for your interest in joining our mission of providing comfort and compassion to our patients and their families...
+                </div>
+
+
+                <div class="primary-alt uk-padding">
+                    <p class="uk-text-justify" style="line-height: 1.5rem;">
+                        Do you feel a calling to help people during their final phase of life? It's a sacred space and the most selfless journey you will ever embark on. We encourage you to inquire and learn more by contacting us.
+                    </p>
+                    <div class="uk-panel">
+                        <h2 style="text-align: left;">{{print "Benefits:"}}</h2>
+                    </div>
+                    <p class="uk-text-justify" style="line-height: 1.5rem;">
+                        We generously offer 401K plans, Health + Dental Insurance, flexible hours, top industry pay, mileage reimbursement, gym reimbursement,
+                        child care, pet care, hosted recreational events and much more.
+                    </p>
+                    <h2 style="text-align: left;">
+                        To Proceed:
                     </h2>
-                  </div>
+                    <p class="uk-text-justify" style="line-height: 1.5rem;">
+                        Kindly send resumes to <a href="mailto:jobs@cchha.com">jobs</a> and a member of our team will contact you.
+                    </p>
+                    <p class="uk-text-justify" style="line-height: 1.5rem;">
+                        Do you feel a calling to help people during their final phase of life? It's a sacred space and the most selfless journey you will ever embark on.
+                    </p>
                 </div>
-
-                <div class="uk-card uk-card-default uk-card-body">
-                <p class="uk-text-justify" style="line-height: 1.5rem;">
-                  Hospice is a philosophy of curated care and service for people with
-                  a terminal illness along with providing a support system to their loved ones.
-                  Hospice is about providing the best quality of life during the final stage of life.
-                </p>
-                <div class="uk-panel">
-                  <h2 style="text-align: left;">{{print "Benefits:"}}</h2>
-                </div>
-                <p class="uk-text-justify" style="line-height: 1.5rem;">
-                  We generously offer 401K plans, Health + Dental Insurance, flexible hours, top industry pay, mileage reimbursement, gym reimbursement,
-                  child care, pet care, hosted recreational events and much more.
-                </p>
-                <h2 style="text-align: left;">
-                  To Proceed:
-                </h2>
-                <p class="uk-text-justify" style="line-height: 1.5rem;">
-                  Kindly send resumes to <a href="mailto:jobs@cchha.com">jobs</a> and a member of our team will contact you.
-                </p>
-                <p class="uk-text-justify" style="line-height: 1.5rem;">
-                  Do you feel a calling to help people during their final phase of life? It's a sacred space and the most selfless journey you will ever embark on.
-                  We encourage you to inquire and learn more by contacting us: <a href="/hospice/contact.html"contact">contact us</a>
-                </p>
-                </div>
-              </div>
             </div>
-          </div>
+        <div class="uk-container uk-padding">
+            <div class="uk-grid-collapse uk-grid-match uk-child-width-1-1" uk-grid>
+                <div class="uk-width-1-1@s uk-width-1-1@m uk-background-primary">
+                    <div class="uk-padding uk-background-default">
+                        <div class="uk-flex uk-flex-center"><img src="/static/assets/cchha.svg" alt="Compassionate Care Home Health Agency Logo"></div>
+                    </div>
+                    <div class="uk-padding">
+                        <h4 class="uk-heading-line uk-text-center" style="color:white;"><span>If you'd like to apply with us, please fill out the form below</span></h4>
+                        <p class="uk-text-center" style="color:white;">Please attatch your resume as a pdf file.</p>
+                        <div class="uk-flex-center uk-flex">
+                            <form class="uk-grid-small" uk-grid action="/contact-careers" enctype="multipart/form-data" method="POST">
+                                <div class="uk-width-1-2">
+                                    <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: user"></span>
+                                        <input class="uk-input" type="text" placeholder="Full Name" name="contact_name">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: mail"></span>
+                                        <input class="uk-input" type="text" placeholder="E-Mail" name="contact_email">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: hashtag"></span>
+                                        <input class="uk-input" type="phone" placeholder="Phone" name="contact_phone">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon: location"></span>
+                                        <input class="uk-input" type="text" placeholder="Address" name="contact_address">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <textarea class="uk-textarea" placeholder="Your Message" rows="5" style="resize:none; overflow-x:hidden;" name="contact_body"></textarea>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div uk-form-custom="target: true">
+                                        <input type="file" name="file_upload" accept="application/pdf">
+                                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Attach Resume PDF" disabled>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-3">
+                                    <div class="g-recaptcha" data-sitekey="6Ldyv7UUAAAAAC0uWC7PTIBdowvM2yhw4hmLI-Lv"></div>
+                                    <input class="uk-input" type="submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="uk-section-secondary uk-section uk-flex">
-
-          <div class="uk-container">
-            <div class="uk-comment-header uk-text-center">
-              <p class=""uk-h2 uk-font-bold uk-font-uppercase">Contact Us Today</p>
-            </div>
-            <div class="uk-section-primary">
-              <div class="uk-padding">
-                <form class = "uk-grid-small" uk-grid action = "/contact" method = "POST" >
-                  <div class = "uk-width-1-2" >
-                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: user" ></span >
-                      <input class = "uk-input placeholder-black"
-                             type = "text"
-                             style = "background-color: rgba(255,255,255,0.3);
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);"
-                             placeholder = "Full Name"
-                             name = "contact_name" >
-                    </div >
-                  </div >
-                  <div class = "uk-width-1-2" >
-
-                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: mail" ></span >
-                      <input class = "uk-input placeholder-black"
-                             type = "text"
-                             style = "background-color: rgba(255,255,255,0.3);
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);"
-                             placeholder = "E-Mail"
-                             name = "contact_email" >
-                    </div >
-                  </div >
-                  <div class = "uk-width-1-2" >
-                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: hashtag" ></span >
-                      <input class = "uk-input placeholder-black"
-                             style = "background-color: rgba(255,255,255,0.3);
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);
-                           ::placeholder: black;"
-                             type = "phone"
-                             placeholder = "Phone"
-                             name = "contact_phone" >
-                    </div >
-                  </div >
-                  <div class = "uk-width-1-2" >
-                    <div class = "uk-inline uk-width-1-1" ><span class = "uk-form-icon" uk-icon = "icon: location" ></span >
-                      <input class = "uk-input placeholder-black"
-                             type = "text"
-                             style = "background-color: rgba(255,255,255,0.3);
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);"
-                             placeholder = "Address"
-                             name = "contact_address" >
-                    </div >
-                  </div >
-                  <div class = "uk-width-1-1" >
-                            <textarea class = "uk-textarea placeholder-black" placeholder = "Your Message" rows = "5" style = "resize:none; overflow-x:hidden;
-                            background-color: rgba(255,255,255,0.3);
-                            box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.6);" name = "contact_body" ></textarea >
-                  </div >
-                  <div class = "uk-width-1-3" >
-                    <div class = "g-recaptcha" data-sitekey = "6Ldyv7UUAAAAAC0uWC7PTIBdowvM2yhw4hmLI-Lv" ></div >
-                    <input class = "uk-button uk-button-primary placeholder-black" type = "submit" >
-                  </div >
-                </form >
-                <style>
-                  .placeholder-black::-webkit-input-placeholder {
-                    color: rgba(0,0,0,0.6)!important;
-                  }
-                </style>
-                <script type="text/javascript">
-
-                  document.addEventListener('DOMContentLoaded', (event) => {
-                    const color = "rgba(0,0,0,0.6)"
-
-                    let form = document.querySelector('form')
-
-                     let span = form.childNodes[1].childNodes[1].childNodes[0]
-                     span.style.color = color;
-                     span = form.childNodes[3].childNodes[1].childNodes[0]
-                     span.style.color = color;
-                     span = form.childNodes[5].childNodes[1].childNodes[0]
-                     span.style.color = color;
-                     span = form.childNodes[7].childNodes[1].childNodes[0]
-                     span.style.color = color;
-
-            });
-
-        </script>
-                <div class="uk-padding-small uk-padding-remove-horizontal uk-text-meta" style="color: rgba(0,0,0,0.6);">We will never give out any of your personal information.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 {{end}}
-  </body>
-</html>
+
