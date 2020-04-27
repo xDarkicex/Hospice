@@ -1,8 +1,10 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
 	"log"
+	"net/http"
 	"os"
 	"runtime"
 	"strconv"
@@ -10,6 +12,9 @@ import (
 
 	"github.com/go-chi/chi/v4"
 	"github.com/joho/godotenv"
+	_ "golang.org/x/crypto/acme"
+	"golang.org/x/crypto/acme/autocert"
+
 	"github.com/xDarkicex/Hospice/helpers"
 	"github.com/xDarkicex/Hospice/server"
 	"github.com/xDarkicex/Hospice/terminal"
@@ -101,11 +106,30 @@ func main() {
 	fmt.Println("[" + terminal.Colors[218]("200") + "]" + terminal.Colors[212]("Now Listening ") + helpers.Color.PinkBold("ON ") + helpers.Color.Blue(ADDRESS))
 
 	if config.ENV.Production {
-		fmt.Println("...")
+		fmt.Println("Production Server")
 	}
-	// err = http.ListenAndServe(srv.Address, chi.ServerBaseContext(c, mux))
-	// if err != nil {
-	// 	fmt.Println(c)
-	// }
+
+	var domains = []string{"localhost", "127.0.0.1", "compassionatecare.com", "cchha.com"}
+
+	mgr := autocert.Manager{
+		Prompt:     autocert.AcceptTOS,
+		HostPolicy: autocert.HostWhitelist(domains...),
+		Cache:      autocert.DirCache("certs"),
+	}
+
+	_ = &http.Server{
+		Addr: ":https",
+		Handler: served,
+		TLSConfig: &tls.Config{
+			GetCertificate: mgr.GetCertificate,
+		},
+	}
+	err := http.ListenAndServe("127.0.0.1:3000", served)
+	if err != nil {
+		fmt.Println(err)
+	}
+	// go http.ListenAndServe(":http", mgr.HTTPHandler(nil))
+	// log.Printf("start listening at :http")
+	// log.Fatal(s.ListenAndServeTLS("", "")) // Key and cert provided by Let's Encrypt
 
 }

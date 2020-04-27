@@ -34,6 +34,7 @@ vendor/
 *.svg
 *.pdf
 /src
+/gox
 
 /shelf/
 /workspace.xml

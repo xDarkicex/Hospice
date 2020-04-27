@@ -4,6 +4,10 @@
           margin: 0; padding: 0;
           max-width: 40rem;
         }
+        .uk-list-bullet > li {
+          margin-top: -10px;
+          margin-bottom: -10px;
+        }
       </style>
       <div class="uk-section-alt uk-preserve-color uk-align-middle"">
           <div class="uk-padding">
@@ -16,16 +20,14 @@
         <div class="uk-grid-match uk-child-width-1-1@s uk-child-width-1-2@m uk-padding" uk-grid>
           <div>
             <div class="uk-card uk-card-default">
-              <div class="uk-media-top" >
+              <div class="uk-media-top">
                 <img src='/static/assets/services-1.jpg' class="uk-height-custom" alt="">
               </div>
-              <div class="uk-card-body">
-                <div class="uk-margin-top">
-                  <h1 style="text-align: left;">{{print "What Is Hospice:"}}</h1>
-                  <br />
-                </div>
+              <div class="uk-padding">
+                <h1 style="text-align: left;">{{print "What Is Hospice:"}}</h1>
+              </div>
 
-                <div class="uk-panel">
+                <div class="uk-panel uk-padding">
                   <ul class="uk-list">
                     <li>
                       <p class="uk-text-justify">
@@ -55,238 +57,154 @@
                 </div>
               </div>
             </div>
-          </div>
+
           <div>
             <div class="uk-card uk-card-default">
-              <div class="uk-media-top" >
-                <img src='/static/assets/services-2.jpg' class="uk-height-custom" alt="">
+              <div class="uk-media-top">
+                <img src='/static/assets/services-14.jpg' class="uk-height-custom" alt="">
               </div>
-              <div class="uk-card-body">
-                <div class="uk-margin-top">
+                <div class="uk-padding">
                   <h1 style="text-align: left;">{{print "Hospice Facts:"}}</h1>
-                  <br />
                 </div>
-                <div class="uk-panel">
+                <div class="uk-panel uk-padding">
+                  <ul class="uk-list uk-list-bullet">
+                    <li>
 
-{{/*                  <ul class="uk-list">*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify">*/}}
-{{/*                        Hospice is the providing of care for a person who is terminally ill.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify">*/}}
-{{/*                        Hospice is not a physical location, like a hospital or nursing home.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice focuses on quality of life; it is most beneficial during the final six months of life expectancy.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is not a “death bed” service for people in the last 48 hours of life.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice gives the right of truth to everyone involved so they know accurately and truthfully*/}}
-{{/*                        what is happening to them so they may navigate how they wish to spend the remaining time in the most meaningful ways.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is the providing of care for a person who is terminally ill.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is not a place to send dying people to keep them ignorant of exactly what is happening to them.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is for people who have any and all terminal illnesses.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is not just for cancer patients.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is a realistic way to deal with a fatal diagnosis.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice offers hope, dignity and comfort.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is not giving up on hope or help.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is a family-oriented program that helps families and/or friends care for their loved one in the sanctuary of their own homes.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is not a substitute for the family or the family’s care, but rather a much needed addition.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is covered by Medicare, Medicaid and several other insurance providers. We never deny care, even for patients are unable to pay.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is not expensive.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice neither hastens nor prolongs death.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice lets nature run its course.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                    <li>*/}}
-{{/*                      <p class="uk-text-justify"*/}}
-{{/*                      >*/}}
-{{/*                        Hospice is not euthanasia.*/}}
-{{/*                      </p>*/}}
-{{/*                    </li>*/}}
-{{/*                  </ul>*/}}
-                  <p class="reset">
-                    Hospice is the providing of care for a person who is terminally ill.
-                  </p>
-                  <p class="reset">
-                    Hospice is not a physical location, like a hospital or nursing home.
-                  </p>
-                  <p class="reset">
-                    Hospice focuses on quality of life; it is most beneficial during the final six months of life expectancy.
-                  </p>
-                  <p class="reset">
-                    Hospice is not a “death bed” service for people in the last 48 hours of life.
-                  </p>
-                  <p class="reset">
-                    Hospice gives the right of truth to everyone involved so they know accurately and truthfully what is happening to them so they may navigate how they wish to spend the remaining time in the most meaningful ways.
-                  </p>
-                  <p class="reset">
-                    Hospice is the providing of care for a person who is terminally ill.
-                  </p>
-                  <p class="reset">
-                    Hospice is not a place to send dying people to keep them ignorant of exactly what is happening to them.
-                  </p>
-                  <p class="reset">
-                    Hospice is for people who have any and all terminal illnesses.
-                  </p>
-                  <p class="reset">
-                    Hospice is not just for cancer patients.
-                  </p>
-                  <p class="reset">
-                    Hospice is a realistic way to deal with a fatal diagnosis.
-                  </p>
-                  <p class="reset">
-                    Hospice offers hope, dignity and comfort.
-                  </p>
-                  <p class="reset">
-                    Hospice is not giving up on hope or help.
-                  </p>
-                  <p class="reset">
-                    Hospice is a family-oriented program that helps families and/or friends care for their loved one in the sanctuary of their own homes.
-                  </p>
-                  <p class="reset">
-                    Hospice is not a substitute for the family or the family’s care, but rather a much needed addition.
-                  </p>
-                  <p class="reset">
-                    Hospice is covered by Medicare, Medicaid and several other insurance providers. We never deny care, even for patients are unable to pay.
-                  </p>
-                  <p class="reset">
-                    Hospice is not expensive.
-                  </p>
-                  <p class="reset">
-                    Hospice neither hastens nor prolongs death.
-                  </p>
-                  <p class="reset">
-                    Hospice lets nature run its course.
-                  </p>
-                  <p class="reset">
-                    Hospice is not euthanasia.
-                  </p>
+                      Hospice is not a physical location, like a hospital or nursing home.
+
+                    </li>
+                    <li>
+
+                      Hospice focuses on quality of life; it is most beneficial during the final six months of life expectancy.
+
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice is not a “death bed” service for people in the last 48 hours of life.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice gives the right of truth to everyone involved so they know accurately and truthfully what is happening to them so they may navigate how they wish to spend the remaining time in the most meaningful ways.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify">
+                        Hospice is not a place to send dying people to keep them ignorant of exactly what is happening to them.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice is for people who have any and all terminal illnesses.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice is not just for cancer patients.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice is a realistic way to deal with a fatal diagnosis.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice offers hope, dignity and comfort.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice is not giving up on hope or help.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice is a family-oriented program that helps families and/or friends care for their loved one in the sanctuary of their own homes.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice is not a substitute for the family or the family’s care, but rather a much needed addition.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice is covered by Medicare, Medicaid and several other insurance providers. We never deny care, even for patients are unable to pay.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice is not expensive.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice neither hastens nor prolongs death.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice lets nature run its course.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="uk-text-justify"
+                      >
+                        Hospice is not euthanasia.
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-          >
+          <div>
             <div class="uk-card uk-card-default">
-              <div class="uk-media-top" >
-                <img src='/static/assets/services-3.jpg' alt="">
+              <div class="uk-media-top">
+                <img src='/static/assets/services-4.jpg' class="uk-height-custom" alt="">
               </div>
-              <div class="uk-card-body">
-                <div class="uk-margin-top">
+                <div class="uk-padding">
                   <h1 style="text-align: left;">{{print "When to Consider Hospice:"}}</h1>
                   <br />
                   <br />
-                  <br />
-                  <br>
-                <br />
                 </div>
-                <div class="uk-panel">
-                  <p class="uk-text-justify"
-                  >
-                    For many of us, end-of-life discussions with family members are very difficult, and in most cases, nonexistent. Although challenging,
-                    it is best for families to share their wishes before the terminal state becomes an immediate reality. In many situations, patients with terminal
-                    illnesses may lose their ability to communicate with their near and dear, forcing family members to make uncomfortable decisions independently during
-                    an already stressful period.
-                    Hospice is for people who have a life expectancy of six months or less and have chosen to
-                    focus on the alleviation of pain and symptoms rather than healing treatment.  People considering hospice need to ask themselves
-                    just a few questions prior to enrolling with our services.
-                  </p>
-                </div>
+
+              <div class="uk-panel uk-padding">
+                <p class="uk-text-justify">
+                  For many of us, end-of-life discussions with family members are very difficult, and in most cases, nonexistent. Although challenging,
+                  it is best for families to share their wishes before the terminal state becomes an immediate reality. In many situations, patients with terminal
+                  illnesses may lose their ability to communicate with their near and dear, forcing family members to make uncomfortable decisions independently during
+                  an already stressful period.
+                  Hospice is for people who have a life expectancy of six months or less and have chosen to
+                  focus on the alleviation of pain and symptoms rather than healing treatment.  People considering hospice need to ask themselves
+                  just a few questions prior to enrolling with our services.
+                </p>
               </div>
             </div>
           </div>
-          <div
-          >
-            <div class="uk-card uk-card-default">
-              <div class="uk-card-media-top">
-                <img src='/static/assets/services-4.jpg' alt="">
-              </div>
-              <div class="uk-card-body">
-                <div class="uk-margin-top">
-                  <h1 style="text-align: left;">{{print "Are You or a Loved One Facing a Life-Limiting Disease or Illness, Such As:"}}</h1>
-                  <br />
-                </div>
-                <div class="uk-panel">
 
+          <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-media-top" >
+                  <img src='/static/assets/services-5.jpg' alt="">
+                </div>
+                <div class="uk-padding">
+                  <h1 style="text-align: left;">{{print "Are You or a Loved One Facing a Life-Limiting Disease or Illness, Such As:"}}</h1>
+                </div>
+              <div class="uk-panel uk-padding">
                   <p class="reset">
                         Cancer
                   </p>
@@ -314,47 +232,41 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div
-          >
+
+          <div>
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
-                <img src='/static/assets/services-5.jpg' alt="">
-              </div>
-              <div class=" uk-card-body">
-                <div class="uk-margin-top">
+                <img src='/static/assets/services-6.jpg' alt="">
+
+                <div class="uk-padding">
                     <h1 style="text-align: left;">{{print "What are the Patient’s Goals and Wishes:"}}</h1>
                   <br />
                 </div>
-                <div class="uk-panel">
-                  <p class="uk-text-justify"
-                  >
-                    Compassionate Care Hospice listens to our patients and designs a care plan based on their preferences for end-of-life treatment.
-                    This process known as Advance Care Planning (ACP) ensures the patient’s wishes are known and honored should they reach a point in their progression that prevents communication.
-                    Our team will then assemble a personalized care plan that includes certain procedures or interventions that should, or should not be pursued, and honors the patient’s wishes while
-                    focusing on the remaining time left with the utmost attention to quality of life. Our clinicians are experienced in assessing whether a patient is eligible for hospice, and can meet with the patient
-                    and family for a free assessment.
-                  </p>
-                </div>
+              </div>
+              <div class="uk-panel uk-padding">
+                <p class="uk-text-justify">
+                  Compassionate Care Hospice listens to our patients and designs a care plan based on their preferences for end-of-life treatment.
+                  This process known as Advance Care Planning (ACP) ensures the patient’s wishes are known and honored should they reach a point in their progression that prevents communication.
+                  Our team will then assemble a personalized care plan that includes certain procedures or interventions that should, or should not be pursued, and honors the patient’s wishes while
+                  focusing on the remaining time left with the utmost attention to quality of life. Our clinicians are experienced in assessing whether a patient is eligible for hospice, and can meet with the patient
+                  and family for a free assessment.
+                </p>
               </div>
             </div>
           </div>
-          <div
-          >
+          <div>
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
                 <img src='/static/assets/services-12.jpg' alt="">
-              </div>
-              <div class="uk-card-body">
-                <div class="uk-margin-top">
+                <div class="uk-padding">
                   <h1 style="text-align: left;">{{print "Understanding the Practice:"}}</h1>
                   <br />
                   <br />
-                  <br>
+                  <br />
                 </div>
-                <div class="uk-panel">
-                  <p class="uk-text-justify"
-                  >
+              </div>
+                <div class="uk-panel uk-padding">
+                  <p class="uk-text-justify" >
                     Recognizing the rights of terminally ill patients and their families is fundamental. We know that it is extremely important to keep our patients
                     and their family members informed of their clinical prognosis and updates in condition.
                     An informed patient and family can more easily work through the decision-making process that determines how their end-of-life care is provided.
@@ -362,7 +274,7 @@
                 </div>
               </div>
             </div>
-          </div>
+
           <div
           >
             <div class="uk-card uk-card-default">
@@ -376,27 +288,43 @@
                   <br />
                 </div>
                 <div class="uk-panel">
+                  <ul class="uk-list uk-list-bullet">
+                    <li>
                       <p class="uk-text-justify reset">
                         Has a doctor certified the patient has six months or less to live?
                       </p>
+                    </li>
+                    <li>
                       <p class="uk-text-justify reset">
                         Are curative treatments no longer effective or  are they creating side effects, undue suffering or discomfort?
                       </p>
+                    </li>
+                    <li>
                       <p class="uk-text-justify reset">
                         Does the patient no longer wish to be hospitalized?
                       </p>
+                    </li>
+                    <li>
                       <p class="uk-text-justify reset">
                         Is the patient losing the ability to perform the activities of daily living (eating, dressing, personal hygiene, maintaining continence, transferring)?
                       </p>
+                    </li>
+                    <li>
                       <p class="uk-text-justify reset">
                         Has the patient had multiple hospitalizations or emergency room visits?
                       </p>
+                    </li>
+                    <li>
                       <p class="uk-text-justify reset">
                         Has the patient lost 10% or more of body weight?
                       </p>
+                    </li>
+                    <li>
                       <p class="uk-text-justify reset">
-                        Is the patients physical activity or mental alertness declining?
+                        Is the patient's physical activity or mental alertness declining?
                       </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -412,6 +340,8 @@
                   <h1 style="text-align: left;">{{print "Patients Live Longer and More Comfortable with Hospice:"}}</h1>
                   <h3 style=color:white;">PLACEHOLDER</h3>
                   <br />
+
+
                 </div>
 
                 <div class="uk-panel">
@@ -459,11 +389,13 @@
           <div>
             <div class="uk-card uk-card-default">
               <div class="uk-card-media-top">
-                <img src='/static/assets/services-10.jpg' alt="">
+                <img src='/static/assets/services-10-updated.jpg' alt="">
               </div>
               <div class="uk-card-body">
                 <div class="uk-margin-top">
                   <h1 style="text-align: left;">{{print "Respite Care:"}}</h1>
+                  <br>
+                  <br>
                 </div>
                 <div class="uk-panel">
                   <p class="uk-text-justify">

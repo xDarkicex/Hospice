@@ -4,7 +4,7 @@ go 1.14
 
 require (
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
-	github.com/go-chi/chi v4.1.1+incompatible
+	github.com/go-chi/chi v4.0.2+incompatible // indirect
 	github.com/go-chi/chi/v4 v4.0.0-rc1
 	github.com/google/uuid v1.1.1
 	github.com/joho/godotenv v1.3.0
@@ -14,6 +14,8 @@ require (
 	github.com/scorredoira/email v0.0.0-20191107070024-dc7b732c55da
 	github.com/valyala/fasttemplate v1.1.0
 	go.uber.org/zap v1.15.0
-	golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529 // indirect
+	golang.org/x/crypto v0.0.0-20200423211502-4bdfaf469ed5
+	golang.org/x/net v0.0.0-20200421231249-e086a090c8fd // indirect
+	golang.org/x/text v0.3.2 // indirect
 	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543
 )
