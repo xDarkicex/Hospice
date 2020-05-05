@@ -1,20 +1,25 @@
 <!DOCTYPE html><html><head><meta http-equiv=“Pragma” content=”no-cache”>
 <meta http-equiv=“Expires” content=”-1″>
-<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" viewport-fit="cover"><meta name="description" content="We have been serving the Central Valley community for over a decade, and our commitment to providing the highest quality care shows in every patient we serve. Let us show you what compassionate care truly means."><link rel="icon" ype="image/png" href="/static/assets/favicon.png"><link rel="stylesheet" href="/static/css/main.css"><title>{{.Title}}</title><script src="/static/js/main.js"></script><script>var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player',{
-    events: {
-      onReady: function(event) {
-        //- var embedCode = event.target.getVideoEmbedCode()
-        //- event.target.unMute()
-        event.target.setVolume(100)
-      }
+<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" viewport-fit="cover"><meta name="description" content="We have been serving the Central Valley community for over a decade, and our commitment to providing the highest quality care shows in every patient we serve. Let us show you what compassionate care truly means."><link rel="icon" ype="image/png" href="/static/assets/favicon.png"><link rel="stylesheet" href="/static/css/main.css"><title>{{.Title}}</title><script src="/static/js/main.js">
+  </script>
+  <script>
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player',{
+        events: {
+          onReady: function(event) {
+            //- var embedCode = event.target.getVideoEmbedCode()
+            //- event.target.unMute()
+            event.target.setVolume(100)
+          }
+        }
+      })
     }
-  })
-}</script><!-- Facebook Pixel Code --><script>!function(f,b,e,v,n,t,s)
+    </script><!-- Facebook Pixel Code -->
+      <script>!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -66,9 +71,9 @@ gtag('config', 'UA-133675222-1');</script><!-- End Facebook Pixel Code --></head
   map.mapTypes.set('styled_map', styledMapType);
   map.setMapTypeId('styled_map');
   var polygon = [
-    
+
     {lng:-119.739990,lat:37.365791},
-    
+
     {lng:-119.481812,lat:37.361426},
     // top right kern county
     {lat: 35.785317,lng: -117.648419},
@@ -84,11 +89,11 @@ gtag('config', 'UA-133675222-1');</script><!-- End Facebook Pixel Code --></head
     //- {lat:35.836913, lng:-119.267636},
     {lng:-120.454102,lat:36.124565},
     {lng:-120.437622,lat:36.800488},
-    
+
     {lat:36.986407, lng:-120.626421},
     {lat:37.348722, lng:-120.601722},
     {lng:-119.739990,lat:37.365791}
-    
+
 
   ];
   var stanislaus = [
@@ -118,7 +123,7 @@ gtag('config', 'UA-133675222-1');</script><!-- End Facebook Pixel Code --></head
     {lat: 37.424373, lng: -119.651834},
     {lat: 37.414149, lng: -119.761756},
     {lat: 37.505242, lng: -120.332217},
-    
+
     {lat: 37.679488, lng: -120.381559},
     {lat: 37.653329, lng: -120.329306},
     {lat: 37.720857, lng: -120.348502},

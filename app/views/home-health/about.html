@@ -1,4 +1,3 @@
-{{define "base"}}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -117,6 +116,34 @@
           padding: 30px 20px;
         }
       </style>
+      <div class="uk-grid-medium">
+<div class="uk-text-center uk-width-1-1 uk-padding uk-padding-remove-left uk-padding-remove-right">
+<img src="/static/assets/cchha.svg" alt="Compassionate Care Home Health Agency Logo">
+<div class="uk-container">
+<p class="uk-text-center uk-padding-small">Central California's leading Home Health Agency; providing world-class, personalized medical services in the privacy & comfort of your home.</p>
+</div>
+</div>
+</div>
+<div>
+<div id="video-container" >
+<video id="video" style="min-width:100%;" uk-video="automute: true; autoplay: true;" loop controls>
+<source src="/static/assets/cchha-ad.webm" type="video/webm">
+
+Sorry, your browser doesn't support embedded videos.
+</video>
+</div>
+</div>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+var v = document.querySelector("#video")
+v.muted = !v.muted;
+console.log(v.muted)
+setTimeout(function(){
+scrollTo({top:320, behavior: 'smooth'
+});
+console.log(v.muted) }, 5000);
+});
+</script>
       <div class="uk-padding">
         <h1 class="uk-text-center uk-heading-line"><span>We Believe in Compassionate Care</span></h1>
       </div>
@@ -714,4 +741,4 @@
     </div>
   </body>
 </html>
-{{end}}
+

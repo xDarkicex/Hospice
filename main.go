@@ -109,7 +109,7 @@ func main() {
 		fmt.Println("Production Server")
 	}
 
-	var domains = []string{"localhost", "127.0.0.1", "compassionatecare.com", "cchha.com"}
+	var domains = []string{"localhost", "127.0.0.1", "3.20.184.191", "compassionatecare.com", "cchha.com", "www.cchha.com", "www.compassionatecare.com"}
 
 	mgr := autocert.Manager{
 		Prompt:     autocert.AcceptTOS,
@@ -124,12 +124,11 @@ func main() {
 			GetCertificate: mgr.GetCertificate,
 		},
 	}
-	err := http.ListenAndServe("127.0.0.1:3000", served)
+	err := http.ListenAndServe(":3000", served)
 	if err != nil {
 		fmt.Println(err)
 	}
 	// go http.ListenAndServe(":http", mgr.HTTPHandler(nil))
 	// log.Printf("start listening at :http")
 	// log.Fatal(s.ListenAndServeTLS("", "")) // Key and cert provided by Let's Encrypt
-
 }
